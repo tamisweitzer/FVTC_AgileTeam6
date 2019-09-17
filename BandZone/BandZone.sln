@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.438
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BandZone.UI", "BandZone.UI\BandZone.UI.csproj", "{D3CBBC94-81B5-4C95-9072-117D218AC878}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BandZone.DB", "BandZone.DB\BandZone.DB.sqlproj", "{FC258418-3E41-4DA3-BCAA-8A0858FF126F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,12 @@ Global
 		{D3CBBC94-81B5-4C95-9072-117D218AC878}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3CBBC94-81B5-4C95-9072-117D218AC878}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3CBBC94-81B5-4C95-9072-117D218AC878}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC258418-3E41-4DA3-BCAA-8A0858FF126F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC258418-3E41-4DA3-BCAA-8A0858FF126F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC258418-3E41-4DA3-BCAA-8A0858FF126F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FC258418-3E41-4DA3-BCAA-8A0858FF126F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC258418-3E41-4DA3-BCAA-8A0858FF126F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC258418-3E41-4DA3-BCAA-8A0858FF126F}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
