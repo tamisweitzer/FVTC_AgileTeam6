@@ -64,6 +64,8 @@
     <Build Include="Tables\tblMusician.sql" />
     <Build Include="Tables\tblSong.sql" />
     <Build Include="Tables\tblSongGenre.sql" />
+    <Build Include="Tables\tblMusicianGenre.sql" />
+    <Build Include="Tables\tblMusicianVenueEvent.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="BandZone.DB.refactorlog" />

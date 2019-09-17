@@ -2,9 +2,5 @@ C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.dac
 C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.dll
 C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.pdb
 C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.sqlprojAssemblyReference.cache
-C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\obj\Debug\Model.xml
-C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\obj\Debug\refactor.xml
-C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\obj\Debug\postdeploy.sql
-C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\obj\Debug\predeploy.sql
 C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.dll
 C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb

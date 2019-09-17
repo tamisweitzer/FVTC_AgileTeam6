@@ -21,4 +21,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="SongId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="ae31d3d6-3e72-4c99-8c8e-8c8339cae0e5" ChangeDateTime="09/17/2019 22:33:13">
+    <Property Name="ElementName" Value="[dbo].[tblMusicGenre].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblMusicGenre]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MusicianId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="78345e5d-0c58-4942-b9da-9c82069c9dff" ChangeDateTime="09/17/2019 22:34:18">
+    <Property Name="ElementName" Value="[dbo].[tblMusicianVenueEvent].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblMusicianVenueEvent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MusicianId" />
+  </Operation>
 </Operations>
