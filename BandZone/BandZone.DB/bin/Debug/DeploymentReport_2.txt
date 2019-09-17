@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[tblMusicianVenueEvent] (Table)
+       [dbo].[tblMusicGenre] (Table)
+       [dbo].[tblSongGenre] (Table)
+       [dbo].[tblSong] (Table)
+       [dbo].[tblMusician] (Table)
+       [dbo].[tblVenue] (Table)
+       [dbo].[tblGenre] (Table)
+
+** Supporting actions

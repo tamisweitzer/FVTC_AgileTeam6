@@ -4,3 +4,8 @@ C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.pdb
 C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.sqlprojAssemblyReference.cache
 C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.dll
 C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb
+\\Mac\Home\Documents\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.dacpac
+\\Mac\Home\Documents\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.dll
+\\Mac\Home\Documents\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.pdb
+\\Mac\Home\Documents\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.dll
+\\Mac\Home\Documents\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb
