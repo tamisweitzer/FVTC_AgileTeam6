@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BandZone.UI", "BandZone.UI\
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "BandZone.DB", "BandZone.DB\BandZone.DB.sqlproj", "{FC258418-3E41-4DA3-BCAA-8A0858FF126F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BandZone.PL", "BandZone.PL\BandZone.PL.csproj", "{C944769E-F80B-4C03-8C28-93C8BEFA7069}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{FC258418-3E41-4DA3-BCAA-8A0858FF126F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FC258418-3E41-4DA3-BCAA-8A0858FF126F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FC258418-3E41-4DA3-BCAA-8A0858FF126F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C944769E-F80B-4C03-8C28-93C8BEFA7069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C944769E-F80B-4C03-8C28-93C8BEFA7069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C944769E-F80B-4C03-8C28-93C8BEFA7069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C944769E-F80B-4C03-8C28-93C8BEFA7069}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
