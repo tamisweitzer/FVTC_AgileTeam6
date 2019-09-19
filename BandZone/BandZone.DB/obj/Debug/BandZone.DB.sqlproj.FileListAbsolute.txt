@@ -9,3 +9,8 @@ C:\Users\hunte\source\repos\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb
 \\Mac\Home\Documents\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.pdb
 \\Mac\Home\Documents\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.dll
 \\Mac\Home\Documents\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb
+C:\Workspaces\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.dacpac
+C:\Workspaces\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.dll
+C:\Workspaces\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.pdb
+C:\Workspaces\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.dll
+C:\Workspaces\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb

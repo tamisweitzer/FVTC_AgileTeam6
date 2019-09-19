@@ -3,8 +3,8 @@
     "",
     "\\BandZone",
     "\\BandZone\\BandZone.DB",
-    "\\BandZone\\BandZone.DB\\Tables"
+    "\\BandZone\\BandZone.UI"
   ],
-  "SelectedNode": "\\BandZone\\BandZone.sln",
+  "SelectedNode": "\\BandZone\\BandZone.UI",
   "PreviewInSolutionExplorer": false
 }
