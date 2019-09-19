@@ -59,12 +59,13 @@
     <Folder Include="Tables" />
     <Folder Include="Post-Deployment" />
     <Folder Include="Pre-Deployment" />
+    <Folder Include="Post-Deployment\DefaultData" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\tblMusician.sql" />
     <Build Include="Tables\tblSong.sql" />
     <Build Include="Tables\tblSongGenre.sql" />
-    <Build Include="Tables\tblMusicianGenre.sql" />
+    <Build Include="Tables\tblMusicGenre.sql" />
     <Build Include="Tables\tblMusicianVenueEvent.sql" />
     <Build Include="Tables\tblVenue.sql" />
     <Build Include="Tables\tblGenre.sql" />
@@ -74,5 +75,17 @@
   </ItemGroup>
   <ItemGroup>
     <PreDeploy Include="Pre-Deployment\Script.PreDeployment1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Post-Deployment\Script.PostDeployment1.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Post-Deployment\DefaultData\Musicians.sql" />
+    <None Include="Post-Deployment\DefaultData\BandZoneGenre.sql" />
+    <None Include="Post-Deployment\DefaultData\Song.sql" />
+    <None Include="Post-Deployment\DefaultData\Venue.sql" />
+    <None Include="Post-Deployment\DefaultData\MusicianGenre.sql" />
+    <None Include="Post-Deployment\DefaultData\SongGenre.sql" />
+    <None Include="Post-Deployment\DefaultData\MusicianVenueEvent.sql" />
   </ItemGroup>
 </Project>

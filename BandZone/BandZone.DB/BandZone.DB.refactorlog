@@ -49,4 +49,53 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="GenreId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="030b428c-e2aa-4037-a648-c6627097bb32" ChangeDateTime="09/19/2019 16:33:58">
+    <Property Name="ElementName" Value="[dbo].[tblMusicGenre].[GenreId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblMusicGenre]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MusicianId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1c86493a-9610-463e-bcc1-bdc2880946f8" ChangeDateTime="09/19/2019 16:34:04">
+    <Property Name="ElementName" Value="[dbo].[tblMusicGenre].[MusicianId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblMusicGenre]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a4f460e3-b245-4fcb-a9ab-97931e824aa1" ChangeDateTime="09/19/2019 16:43:21">
+    <Property Name="ElementName" Value="[dbo].[tblMusicianVenueEvent].[EventTime]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblMusicianVenueEvent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="VenueId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="03cbb348-a1f5-4646-915b-0e1a55c42d13" ChangeDateTime="09/19/2019 16:43:24">
+    <Property Name="ElementName" Value="[dbo].[tblMusicianVenueEvent].[VenueId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblMusicianVenueEvent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="MusicianId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="623f21c1-74a9-481f-971c-f71f388259ad" ChangeDateTime="09/19/2019 16:43:27">
+    <Property Name="ElementName" Value="[dbo].[tblMusicianVenueEvent].[MusicianId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblMusicianVenueEvent]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="28f446ba-a384-4f30-8696-735fb41a0479" ChangeDateTime="09/19/2019 16:44:03">
+    <Property Name="ElementName" Value="[dbo].[tblSongGenre].[GenreId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblSongGenre]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SongId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e319cb3e-2091-41cd-85f3-35663d14eed1" ChangeDateTime="09/19/2019 16:44:16">
+    <Property Name="ElementName" Value="[dbo].[tblSongGenre].[SongId]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblSongGenre]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id" />
+  </Operation>
 </Operations>

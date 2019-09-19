@@ -1,5 +1,0 @@
-﻿CREATE TABLE [dbo].[tblMusicGenre]
-(
-	[MusicianId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
-    [GenreId] UNIQUEIDENTIFIER NOT NULL
-)
