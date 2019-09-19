@@ -38,3 +38,15 @@ textarea {
     padding-top: 80px;
     max-height: 650px;
 }
+
+
+.card {
+    max-width: 90%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 4%;
+    margin-right: 10%;
+}
+
+.icons {
+    color: gray;
