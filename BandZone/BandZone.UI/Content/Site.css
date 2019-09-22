@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 0;
+    padding-top: 80px; /* Default was 50px. Added addl 30px to give content room to breathe */
     padding-bottom: 20px;
 }
 
@@ -35,7 +35,7 @@ textarea {
 
 
 .carousel-item {
-    padding-top: 80px;
+    /*padding-top: 80px; */ /* Removed this padding and replaced it with body padding so that all pages will benefit */ 
     max-height: 650px;
 }
 
