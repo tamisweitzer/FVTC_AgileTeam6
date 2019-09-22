@@ -12,16 +12,8 @@ namespace BandZone.UI.Controllers
         // GET: Musician
         public ActionResult Index()
         {
-            if (Authenticate.IsAuthenticated())
-            {
-                musician = new Musician();
-                musician.load()
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Create", "Login", new { returnurl = HttpContext.Request.Url });
-            }
+            ViewBag.Message = "Musician Page";
+            return View();
             
         }
     }
