@@ -34,6 +34,8 @@ textarea {
 }
 
 
+
+
 .carousel-item {
     /*padding-top: 80px; */ /* Removed this padding and replaced it with body padding so that all pages will benefit */ 
     max-height: 650px;
@@ -50,3 +52,5 @@ textarea {
 
 .icons {
     color: gray;
+}
+
