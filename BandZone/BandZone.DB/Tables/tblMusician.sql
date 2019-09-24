@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[tblMusician]
 (
 	[MusicianId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
-    [Band/MusicianName] VARCHAR(50) NOT NULL, 
+    [BandMusicianName] VARCHAR(50) NOT NULL, 
     [SongId] UNIQUEIDENTIFIER NULL, 
     [Phone] VARCHAR(50) NULL, 
     [ContactEmail] VARCHAR(50) NULL, 

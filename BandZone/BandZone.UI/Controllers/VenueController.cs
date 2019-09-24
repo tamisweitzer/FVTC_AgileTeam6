@@ -12,6 +12,7 @@ namespace BandZone.UI.Controllers
         // GET: Venue
         public ActionResult Index()
         {
+            ViewBag.Message = "Venue page";
             return View();
         }
     }

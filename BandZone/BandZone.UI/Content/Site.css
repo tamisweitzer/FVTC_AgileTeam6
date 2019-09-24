@@ -1,13 +1,9 @@
 ﻿body {
-    padding-top: 0;
+    font-family: 'Roboto', sans-serif;
     padding-bottom: 20px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -34,11 +30,58 @@ textarea {
 }
 
 
-.carousel-item {
-    padding-top: 80px;
-    max-height: 650px;
+/* carousel fullscreen */
+.carousel-fullscreen .carousel-inner .carousel-item {
+    height: 100vh;
+    /*min-height: 600px;*/
+    max-height: 700px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+/* carousel fullscreen - vertically centered caption*/
+.carousel-fullscreen .carousel-caption {
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+}
+
+/* overlay for better readibility of the caption  */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.3;
+    transition: all 0.2s ease-out;
+}
+
+.carousel .carousel-item {
+    transition-duration: 1.5s;
+}
+
+/* demo typography */
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 700;
+}
+
+@media (max-width: 767.98px) {
+    .display-1 {
+        font-size: 3.3rem;
+    }
+
+    .display-2 {
+        font-size: 2.5rem;
+    }
+
+    .display-3 {
+        font-size: 2rem;
+    }
+}
 
 .card {
     max-width: 90%;
@@ -50,3 +93,6 @@ textarea {
 
 .icons {
     color: gray;
+}
+
+

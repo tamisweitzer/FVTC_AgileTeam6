@@ -10,14 +10,13 @@ namespace BandZone.UI.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        public ActionResult Create(string returnurl)
+        public ActionResult Create()
         {
-            ViewBag.ReturnUrl = returnurl;
+            ViewBag.Message = "Login page";
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Create(User user, string returnurl)
+        
     }
 
     
