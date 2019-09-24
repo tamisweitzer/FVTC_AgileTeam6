@@ -14,3 +14,4 @@ C:\Workspaces\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.dll
 C:\Workspaces\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.pdb
 C:\Workspaces\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.dll
 C:\Workspaces\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb
+C:\Workspaces\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.sqlprojAssemblyReference.cache
