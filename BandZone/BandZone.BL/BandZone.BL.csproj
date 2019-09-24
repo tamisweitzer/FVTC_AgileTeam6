@@ -50,5 +50,11 @@
     <Compile Include="SongGenre.cs" />
     <Compile Include="Venue.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BandZone.PL\BandZone.PL.csproj">
+      <Project>{c944769e-f80b-4c03-8c28-93c8befa7069}</Project>
+      <Name>BandZone.PL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
