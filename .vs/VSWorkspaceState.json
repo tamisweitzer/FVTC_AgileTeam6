@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BandZone",
-    "\\BandZone\\BandZone.DB",
-    "\\BandZone\\BandZone.UI"
+    "\\BandZone"
   ],
-  "SelectedNode": "\\BandZone\\BandZone.UI",
+  "SelectedNode": "\\BandZone\\BandZone.sln",
   "PreviewInSolutionExplorer": false
 }
