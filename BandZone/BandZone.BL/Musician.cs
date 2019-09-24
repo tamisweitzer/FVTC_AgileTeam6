@@ -36,8 +36,8 @@ namespace BandZone.BL
                         Musician musician = new Musician
                         {
                             MusicianId = c.MusicianId,
-                            BandMusicianName = c.BandMusicianName,
-                            SongId = c.SongId != null ? c.SongId : Guid.Empty,
+                            BandMusicianName = c.Band_MusicianName,
+                            SongId = c.SongId != null ? (Guid)c.SongId : Guid.Empty,
                             Phone = c.Phone,
                             ContactEmail = c.ContactEmail,
                             Website = c.Website,

@@ -3,18 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-// add using statement to BL, ViewModels, & Models
-//test
+using BandZone.BL;
+
 namespace BandZone.UI.Controllers
 {
     public class MusicianController : Controller
     {
+        MusicianList musicians;
+
         // GET: Musician
         public ActionResult Index()
         {
-            ViewBag.Message = "Musician Page";
-            return View();
-            
+            musicians = new MusicianList();
+            musicians.Load();
+
+            return View(musicians);
         }
     }
 }
