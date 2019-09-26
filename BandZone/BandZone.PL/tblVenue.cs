@@ -15,6 +15,8 @@ namespace BandZone.PL
     public partial class tblVenue
     {
         public System.Guid VenueId { get; set; }
+        public string LoginEmail { get; set; }
+        public string Password { get; set; }
         public string VenueName { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
@@ -23,7 +25,5 @@ namespace BandZone.PL
         public string ContactEmail { get; set; }
         public string Phone { get; set; }
         public string ProfileImage { get; set; }
-        public string LoginEmail { get; set; }
-        public string Password { get; set; }
     }
 }

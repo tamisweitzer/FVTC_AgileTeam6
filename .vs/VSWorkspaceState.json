@@ -2,11 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\BandZone",
-    "\\BandZone\\BandZone.BL",
+    "\\BandZone\\BandZone.DB",
+    "\\BandZone\\BandZone.DB\\Tables",
+    "\\BandZone\\BandZone.PL",
     "\\BandZone\\BandZone.UI",
-    "\\BandZone\\BandZone.UI\\images",
-    "\\BandZone\\BandZone.UI\\Views"
+    "\\BandZone\\BandZone.UI\\Views",
+    "\\BandZone\\BandZone.UI\\Views\\Home",
+    "\\BandZone\\BandZone.UI\\Views\\Schedules",
+    "\\BandZone\\BandZone.UI\\Views\\Venue"
   ],
-  "SelectedNode": "\\BandZone\\BandZone.UI\\images\\guitar.jpg",
+  "SelectedNode": "\\BandZone\\BandZone.UI\\Views\\Home\\Index.cshtml",
   "PreviewInSolutionExplorer": false
 }

@@ -1,6 +1,6 @@
 ﻿body {
     font-family: 'Roboto', sans-serif;
-    padding: 50px 20px;
+    padding-bottom: 20px;
 }
 
 
@@ -96,19 +96,13 @@ h4 {
 }
 
 
-/* Wrapper for header image */
-.banner_list {
-    margin: 0 -20px;
-    padding: 0 -20px;
-}
-
 .bg-image-full {
     height: 100vh;
     max-height: 300px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 
 .centered {
@@ -123,29 +117,5 @@ h4 {
 }
 
 footer {
-    background-color: #333;
-    margin: 0 -20px;
-    padding: 20px;
-    min-height: 200px;
-    color: #bbb;
-}
-
-
-/* Body Content */
-/* TODO SET MIN HEIGHT OF BODY CONTENT TO FOOTER STAYS AT BOTTOM */
-.content-wrapper {
-    height: calc(100vh - 500px);
-}
-
-
-/* Musician Page */
-.musician-table {
-    margin-right: 2rem;
-}
-.musician-table th {
-    background-color:#666;
-    color: #fff;
-}
-.musician-table {
-    margin-top: 2rem;
+    margin-left: 20px;
 }

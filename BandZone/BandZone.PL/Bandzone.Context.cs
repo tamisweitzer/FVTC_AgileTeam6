@@ -27,10 +27,10 @@ namespace BandZone.PL
     
         public virtual DbSet<tblGenre> tblGenre { get; set; }
         public virtual DbSet<tblMusicGenre> tblMusicGenre { get; set; }
+        public virtual DbSet<tblMusician> tblMusician { get; set; }
         public virtual DbSet<tblMusicianVenueEvent> tblMusicianVenueEvent { get; set; }
         public virtual DbSet<tblSong> tblSong { get; set; }
         public virtual DbSet<tblSongGenre> tblSongGenre { get; set; }
-        public virtual DbSet<tblMusician> tblMusician { get; set; }
         public virtual DbSet<tblVenue> tblVenue { get; set; }
     }
 }

@@ -12,23 +12,20 @@
         </div>
     </div>
 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BandMusicianName)
+        </th>
+    </tr>
 
-    <div class="content-wrapper">
-        <table class="table table-striped musician-table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.BandMusicianName)
-                </th>
-            </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BandMusicianName)
+            </td>
+        </tr>
+    }
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.BandMusicianName)
-                    </td>
-                </tr>
-            }
-
-        </table>
-    </div>
+</table>
