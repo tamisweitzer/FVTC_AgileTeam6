@@ -15,13 +15,13 @@ namespace BandZone.PL
     public partial class tblMusician
     {
         public System.Guid MusicianId { get; set; }
-        public string LoginEmail { get; set; }
-        public string Password { get; set; }
-        public string Band_MusicianName { get; set; }
+        public string BandMusicianName { get; set; }
         public Nullable<System.Guid> SongId { get; set; }
         public string Phone { get; set; }
         public string ContactEmail { get; set; }
         public string Website { get; set; }
         public string ProfileImage { get; set; }
+        public string LoginEmail { get; set; }
+        public string Password { get; set; }
     }
 }
