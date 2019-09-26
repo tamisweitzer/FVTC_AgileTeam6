@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\BandZone",
-    "\\BandZone\\BandZone.BL"
+    "\\BandZone\\BandZone.BL",
+    "\\BandZone\\BandZone.UI",
+    "\\BandZone\\BandZone.UI\\images",
+    "\\BandZone\\BandZone.UI\\Views"
   ],
-  "SelectedNode": "\\BandZone\\BandZone.sln",
+  "SelectedNode": "\\BandZone\\BandZone.UI\\images\\guitar.jpg",
   "PreviewInSolutionExplorer": false
 }

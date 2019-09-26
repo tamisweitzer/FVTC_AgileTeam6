@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace BandZone.BL
     public class Musician
     {
         public Guid MusicianId { get; set; }
+        [DisplayName("List of Bands and Musicians")]
         public string BandMusicianName { get; set; }
         public Guid SongId { get; set; }
         public string Phone { get; set; }
@@ -17,7 +19,7 @@ namespace BandZone.BL
         public string Website { get; set; }
         public string ProfileImage { get; set; }
         public string LoginEmail { get; set; }
-        public string Password { get; set; }
+        public string Password { get; set; }  
 
 
     }

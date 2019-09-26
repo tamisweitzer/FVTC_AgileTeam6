@@ -15,3 +15,13 @@ C:\Workspaces\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.pdb
 C:\Workspaces\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.dll
 C:\Workspaces\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb
 C:\Workspaces\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.sqlprojAssemblyReference.cache
+C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.DB\bin\Debug\BandZone.DB.dacpac
+C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.DB\bin\Debug\BandZone.DB.dll
+C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.DB\bin\Debug\BandZone.DB.pdb
+C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.DB\obj\Debug\BandZone.DB.sqlprojAssemblyReference.cache
+C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.DB\obj\Debug\Model.xml
+C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.DB\obj\Debug\refactor.xml
+C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.DB\obj\Debug\postdeploy.sql
+C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.DB\obj\Debug\predeploy.sql
+C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.DB\obj\Debug\BandZone.DB.dll
+C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb

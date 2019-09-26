@@ -157,6 +157,7 @@
     <Content Include="images\Band_picture2.jpg" />
     <Content Include="images\bar.jpg" />
     <Content Include="images\bar2.jpg" />
+    <Content Include="images\guitar.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />

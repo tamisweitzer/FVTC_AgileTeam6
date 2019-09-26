@@ -96,3 +96,26 @@ h4 {
 }
 
 
+.bg-image-full {
+    height: 100vh;
+    max-height: 300px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.centered {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.table {
+    margin-left: 20px;
+}
+
+footer {
+    margin-left: 20px;
+}
