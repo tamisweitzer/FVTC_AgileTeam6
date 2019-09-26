@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="siebersdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="siebersdbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tblGenre">
           <Key>
             <PropertyRef Name="GenreId" />
@@ -25,14 +25,14 @@
             <PropertyRef Name="MusicianId" />
           </Key>
           <Property Name="MusicianId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="LoginEmail" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Band/MusicianName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BandMusicianName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="SongId" Type="uniqueidentifier" />
           <Property Name="Phone" Type="varchar" MaxLength="50" />
           <Property Name="ContactEmail" Type="varchar" MaxLength="50" />
           <Property Name="Website" Type="varchar" MaxLength="50" />
           <Property Name="ProfileImage" Type="varchar" MaxLength="50" />
+          <Property Name="LoginEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="32" Nullable="false" />
         </EntityType>
         <EntityType Name="tblMusicianVenueEvent">
           <Key>
@@ -63,15 +63,16 @@
             <PropertyRef Name="VenueId" />
           </Key>
           <Property Name="VenueId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="VenueName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="OpenTime" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="CloseTime" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContactEmail" Type="nvarchar" MaxLength="50" />
           <Property Name="Phone" Type="nvarchar" MaxLength="50" />
           <Property Name="ProfileImage" Type="nvarchar" MaxLength="50" />
+          <Property Name="LoginEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="32" Nullable="false" />
         </EntityType>
         <EntityContainer Name="siebersdbModelStoreContainer">
           <EntitySet Name="tblGenre" EntityType="Self.tblGenre" Schema="dbo" store:Type="Tables" />
@@ -82,8 +83,7 @@
           <EntitySet Name="tblSongGenre" EntityType="Self.tblSongGenre" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblVenue" EntityType="Self.tblVenue" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="siebersdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -101,20 +101,6 @@
           <Property Name="Id" Type="Guid" Nullable="false" />
           <Property Name="MusicianId" Type="Guid" Nullable="false" />
           <Property Name="GenreId" Type="Guid" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tblMusician">
-          <Key>
-            <PropertyRef Name="MusicianId" />
-          </Key>
-          <Property Name="MusicianId" Type="Guid" Nullable="false" />
-          <Property Name="LoginEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Band_MusicianName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="SongId" Type="Guid" />
-          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ContactEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ProfileImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tblMusicianVenueEvent">
           <Key>
@@ -140,30 +126,45 @@
           <Property Name="SongId" Type="Guid" Nullable="false" />
           <Property Name="GenreId" Type="Guid" Nullable="false" />
         </EntityType>
+        <EntityContainer Name="BandZoneEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblGenre" EntityType="Self.tblGenre" />
+          <EntitySet Name="tblMusicGenre" EntityType="Self.tblMusicGenre" />
+          <EntitySet Name="tblMusicianVenueEvent" EntityType="Self.tblMusicianVenueEvent" />
+          <EntitySet Name="tblSong" EntityType="Self.tblSong" />
+          <EntitySet Name="tblSongGenre" EntityType="Self.tblSongGenre" />
+          <EntitySet Name="tblMusician" EntityType="siebersdbModel.tblMusician" />
+          <EntitySet Name="tblVenue" EntityType="siebersdbModel.tblVenue" />
+        </EntityContainer>
+        <EntityType Name="tblMusician">
+          <Key>
+            <PropertyRef Name="MusicianId" />
+          </Key>
+          <Property Name="MusicianId" Type="Guid" Nullable="false" />
+          <Property Name="BandMusicianName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SongId" Type="Guid" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ContactEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProfileImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LoginEmail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="tblVenue">
           <Key>
             <PropertyRef Name="VenueId" />
           </Key>
           <Property Name="VenueId" Type="Guid" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="VenueName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="OpenTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CloseTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VenueName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OpenTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CloseTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContactEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ProfileImage" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LoginEmail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityContainer Name="BandZoneEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tblGenre" EntityType="Self.tblGenre" />
-          <EntitySet Name="tblMusicGenre" EntityType="Self.tblMusicGenre" />
-          <EntitySet Name="tblMusician" EntityType="Self.tblMusician" />
-          <EntitySet Name="tblMusicianVenueEvent" EntityType="Self.tblMusicianVenueEvent" />
-          <EntitySet Name="tblSong" EntityType="Self.tblSong" />
-          <EntitySet Name="tblSongGenre" EntityType="Self.tblSongGenre" />
-          <EntitySet Name="tblVenue" EntityType="Self.tblVenue" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -184,21 +185,6 @@
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="MusicianId" ColumnName="MusicianId" />
                 <ScalarProperty Name="GenreId" ColumnName="GenreId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblMusician">
-            <EntityTypeMapping TypeName="siebersdbModel.tblMusician">
-              <MappingFragment StoreEntitySet="tblMusician">
-                <ScalarProperty Name="MusicianId" ColumnName="MusicianId" />
-                <ScalarProperty Name="LoginEmail" ColumnName="LoginEmail" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Band_MusicianName" ColumnName="Band/MusicianName" />
-                <ScalarProperty Name="SongId" ColumnName="SongId" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
-                <ScalarProperty Name="Website" ColumnName="Website" />
-                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -229,19 +215,35 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tblMusician">
+            <EntityTypeMapping TypeName="siebersdbModel.tblMusician">
+              <MappingFragment StoreEntitySet="tblMusician">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LoginEmail" ColumnName="LoginEmail" />
+                <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="SongId" ColumnName="SongId" />
+                <ScalarProperty Name="BandMusicianName" ColumnName="BandMusicianName" />
+                <ScalarProperty Name="MusicianId" ColumnName="MusicianId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tblVenue">
             <EntityTypeMapping TypeName="siebersdbModel.tblVenue">
               <MappingFragment StoreEntitySet="tblVenue">
-                <ScalarProperty Name="VenueId" ColumnName="VenueId" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="VenueName" ColumnName="VenueName" />
-                <ScalarProperty Name="Address" ColumnName="Address" />
-                <ScalarProperty Name="City" ColumnName="City" />
-                <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
-                <ScalarProperty Name="CloseTime" ColumnName="CloseTime" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="LoginEmail" ColumnName="LoginEmail" />
                 <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="CloseTime" ColumnName="CloseTime" />
+                <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="VenueName" ColumnName="VenueName" />
+                <ScalarProperty Name="VenueId" ColumnName="VenueId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
