@@ -26,7 +26,7 @@ namespace BandZone.BL
 
     //Branch Test
     // Tami doing a branch test - 
-    // this should be from Tami-test-branch
+    // t his should be from Tami-test-branch
     //
 
     public class MusicianList : List<Musician>
