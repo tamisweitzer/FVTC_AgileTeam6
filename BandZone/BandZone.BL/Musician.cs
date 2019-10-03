@@ -31,6 +31,8 @@ namespace BandZone.BL
     // another test yay
     // testing remove of .vs
     // another test push 
+    //test
+
     public class MusicianList : List<Musician>
     {
         public void Load()
