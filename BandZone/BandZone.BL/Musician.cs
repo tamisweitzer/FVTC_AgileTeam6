@@ -29,7 +29,7 @@ namespace BandZone.BL
     // t his should be from Tami-test-branch
     // testing 
     // another test yay
-
+    // testing remove of .vs
     public class MusicianList : List<Musician>
     {
         public void Load()
