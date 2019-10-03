@@ -8,6 +8,6 @@ namespace BandZone.BL
 {
     class Song
     {
-
+        // please just work
     }
 }
