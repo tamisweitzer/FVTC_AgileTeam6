@@ -24,15 +24,6 @@ namespace BandZone.BL
 
     }
 
-    //Branch Test
-    // Tami doing a branch test - 
-    // t his should be from Tami-test-branch
-    // testing 
-    // another test yay
-    // testing remove of .vs
-    // another test push 
-    //test
-
     public class MusicianList : List<Musician>
     {
         public void Load()
