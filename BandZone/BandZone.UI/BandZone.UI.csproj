@@ -194,6 +194,7 @@
     <Content Include="Views\Venue\Index.cshtml" />
     <Content Include="Views\Schedules\Index.cshtml" />
     <Content Include="Views\Musician\Create.cshtml" />
+    <Content Include="Views\Musician\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
