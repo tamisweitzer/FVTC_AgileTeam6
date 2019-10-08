@@ -20,6 +20,7 @@ namespace BandZone.BL
         public string ProfileImage { get; set; }
         public string LoginEmail { get; set; }
         public string Password { get; set; }
+        public string Description { get; set; }
 
         public Musician()
         {
@@ -40,7 +41,8 @@ namespace BandZone.BL
                         string phone,
                         string contactemail,
                         string website,
-                        string profileimage)
+                        string profileimage,
+                        string description)
         {
             MusicianId = musicianid;
             LoginEmail = loginemail;
@@ -51,6 +53,7 @@ namespace BandZone.BL
             ContactEmail = contactemail;
             Website = website;
             ProfileImage = profileimage;
+            Description = description;
         }
 
         public Musician(string loginemail,
@@ -60,7 +63,8 @@ namespace BandZone.BL
                         string phone,
                         string contactemail,
                         string website,
-                        string profileimage)
+                        string profileimage,
+                        string description)
         {
             LoginEmail = loginemail;
             Password = password;
@@ -70,6 +74,7 @@ namespace BandZone.BL
             ContactEmail = contactemail;
             Website = website;
             ProfileImage = profileimage;
+            Description = description;
         }
 
         private string GetHash()
@@ -114,6 +119,140 @@ namespace BandZone.BL
             catch (Exception ex)
             {
                 throw;
+            }
+        }
+
+        public int Update()
+        {
+            try
+            {
+                using (DVDCentralEntities dc = new DVDCentralEntities())
+                {
+                    if (Id >= 0)
+                    {
+                        tblFormat format = dc.tblFormats.Where(d => d.Id == Id).FirstOrDefault();
+
+                        if (format != null)
+                        {
+                            format.Description = Description;
+                            return dc.SaveChanges();
+                        }
+                        else
+                        {
+                            throw new Exception("Row was not found");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Id is not set.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void LoadById()
+        {
+            try
+            {
+                using (BandZoneEntities dc = new DVDCentralEntities())
+                {
+                    if (MusicianId >= 0)
+                    {
+                        tblMusician musician = dc.tblMusician.Where(d => d.Id == Id).FirstOrDefault();
+
+                        if (musician != null)
+                        {
+                            MusicianId = musician.MusicianId;
+                            Description = musician.Description;
+                            Phone = musician.Phone;
+                            Website = musician.Website;
+                            ContactEmail = musician.ContactEmail;
+                        }
+                        else
+                        {
+                            throw new Exception("Row was not found");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Id is not set.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void LoadById()
+        {
+            try
+            {
+                using (BandZoneEntities dc = new BandZoneEntities())
+                {
+                    if (MusicianId >= 0)
+                    {
+                        tblMusician musician = dc.tblMusician.Where(d => d.Id == Id).FirstOrDefault();
+
+                        if (format != null)
+                        {
+                            MusicianId = musician.MusicianId;
+                            Description = musician.Description;
+                            Phone = musician.Phone;
+                            Website = musician.Website;
+                            ContactEmail = musician.ContactEmail;
+                        }
+                        else
+                        {
+                            throw new Exception("Row was not found");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Id is not set.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public int Delete()
+        {
+            try
+            {
+                using (BandZoneEntities dc = new BandZoneEntities())
+                {
+                    if (MusicianId >= 0)
+                    {
+                        tblMusician musician = dc.tblMusician.Where(d => d.Id == Id).FirstOrDefault();
+
+                        if (musician != null)
+                        {
+                            dc.tblMusician.Remove(musician);
+                            return dc.SaveChanges();
+                        }
+                        else
+                        {
+                            throw new Exception("Row was not found");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Id is not set.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }
