@@ -1,5 +1,5 @@
 ﻿CREATE TABLE [dbo].[tblGenre]
 (
-	[GenreId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+	[GenreId] INT NOT NULL PRIMARY KEY, 
     [GenreType] NVARCHAR(50) NOT NULL
 )

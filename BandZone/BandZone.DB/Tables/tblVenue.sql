@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[tblVenue]
 (
-	[VenueId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
+	[VenueId] INT NOT NULL PRIMARY KEY, 
     [VenueName] NVARCHAR(50) NOT NULL, 
     [Address] NVARCHAR(50) NOT NULL, 
     [City] NVARCHAR(50) NOT NULL, 

@@ -1,13 +1,13 @@
 ﻿BEGIN
 	INSERT INTO tblGenre(GenreId, GenreType)
 	VALUES
-	(NEWID(), 'Country'),
-	(NEWID(), 'Hip Hop'),
-	(NEWID(), 'Rock'),
-	(NEWID(), 'Alternative'),
-	(NEWID(), 'Mix & Variety'),
-	(NEWID(), 'Gospel'),
-	(NEWID(), 'Reggae'),
-	(NEWID(), 'Latino')
+	(1, 'Country'),
+	(2, 'Hip Hop'),
+	(3, 'Rock'),
+	(4, 'Alternative'),
+	(5, 'Mix & Variety'),
+	(6, 'Gospel'),
+	(7, 'Reggae'),
+	(8, 'Latino')
 END
 GO

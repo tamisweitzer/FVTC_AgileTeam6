@@ -1,3 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <StartupScript>(Blank)</StartupScript>
+    <StartAction>StartNone</StartAction>
+    <TargetConnectionString>Data Source=footedb.database.windows.net;Initial Catalog=siebersdb;Persist Security Info=True;User ID=footedb;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=True;TrustServerCertificate=False</TargetConnectionString>
+    <TargetDatabase>siebersdb</TargetDatabase>
+  </PropertyGroup>
 </Project>
