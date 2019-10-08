@@ -18,15 +18,22 @@ namespace BandZone.UI.Controllers
             musicians.Load();
 
             return View(musicians);
+        }
 
-
+        // GET: Musician/Details/5
+        public ActionResult Details(int id)
+        {
+            Musician musician = new Musician();
+            musician.MusicianId = id;
+            musician.LoadById();
+            return View(musician);
         }
 
         // GET: Musician/Create
         public ActionResult Create()
         {
-            Musician customer = new Musician();
-            return View(customer);
+            Musician musician = new Musician();
+            return View(musician);
         }
 
 
@@ -46,14 +53,54 @@ namespace BandZone.UI.Controllers
             }
         }
 
+        // GET: Musician/Edit/5
+        public ActionResult Edit(int id)
+        {
+            Musician musician = new Musician();
+            musician.MusicianId = id;
+            musician.LoadById();
+            return View(musician);
+        }
 
+        // POST: Customer/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, Musician musician)
+        {
+            try
+            {
+                // TODO: Add update logic here
+                musician.Update();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View(musician);
+            }
+        }
 
-       
-        
+        // GET: Musician/Delete/5
+        public ActionResult Delete(int id)
+        {
+            Musician musician = new Musician();
+            musician.MusicianId = id;
+            musician.LoadById();
+            return View(musician);
+        }
 
+        // POST: Musician/Delete/5
+        [HttpPost]
+        public ActionResult Delete(int id, Musician musician)
+        {
+            try
+            {
+                // TODO: Add delete logic here
+                musician.Delete();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View(musician);
+            }
+        }
     }
 }
-
-
-    
-    

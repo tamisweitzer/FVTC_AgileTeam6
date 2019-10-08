@@ -24,3 +24,9 @@ C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.D
 C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.DB\obj\Debug\predeploy.sql
 C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.DB\obj\Debug\BandZone.DB.dll
 C:\Users\Eli\Documents\FVTC\2019\Fall\Classes\Agile\Repos_BZ\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb
+C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\bin\Debug\BandZone.DB.dacpac
+C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\bin\Debug\BandZone.DB.dll
+C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\bin\Debug\BandZone.DB.pdb
+C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\obj\Debug\BandZone.DB.sqlprojAssemblyReference.cache
+C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\obj\Debug\BandZone.DB.dll
+C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb
