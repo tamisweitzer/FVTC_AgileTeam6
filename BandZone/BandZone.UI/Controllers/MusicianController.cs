@@ -18,6 +18,42 @@ namespace BandZone.UI.Controllers
             musicians.Load();
 
             return View(musicians);
+
+
         }
+
+        // GET: Musician/Create
+        public ActionResult Create()
+        {
+            Musician customer = new Musician();
+            return View(customer);
+        }
+
+
+
+        // POST: Musician/Create
+        [HttpPost]
+        public ActionResult Create(Musician musician)
+        {
+            try
+            {
+                musician.Insert();
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View(musician);
+            }
+        }
+
+
+
+       
+        
+
     }
 }
+
+
+    
+    
