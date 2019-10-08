@@ -14,7 +14,7 @@ namespace BandZone.PL
     
     public partial class tblSong
     {
-        public System.Guid SongId { get; set; }
+        public int SongId { get; set; }
         public string SongName { get; set; }
     }
 }

@@ -14,7 +14,7 @@ namespace BandZone.PL
     
     public partial class tblVenue
     {
-        public System.Guid VenueId { get; set; }
+        public int VenueId { get; set; }
         public string VenueName { get; set; }
         public string Address { get; set; }
         public string City { get; set; }

@@ -9,60 +9,61 @@
           <Key>
             <PropertyRef Name="GenreId" />
           </Key>
-          <Property Name="GenreId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="GenreId" Type="int" Nullable="false" />
           <Property Name="GenreType" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tblMusicGenre">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="MusicianId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="GenreId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="MusicianId" Type="int" Nullable="false" />
+          <Property Name="GenreId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="tblMusician">
           <Key>
             <PropertyRef Name="MusicianId" />
           </Key>
-          <Property Name="MusicianId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="MusicianId" Type="int" Nullable="false" />
           <Property Name="BandMusicianName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="SongId" Type="uniqueidentifier" />
+          <Property Name="SongId" Type="int" />
           <Property Name="Phone" Type="varchar" MaxLength="50" />
           <Property Name="ContactEmail" Type="varchar" MaxLength="50" />
           <Property Name="Website" Type="varchar" MaxLength="50" />
           <Property Name="ProfileImage" Type="varchar" MaxLength="50" />
           <Property Name="LoginEmail" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="256" />
         </EntityType>
         <EntityType Name="tblMusicianVenueEvent">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="MusicianId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="VenueId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="MusicianId" Type="int" Nullable="false" />
+          <Property Name="VenueId" Type="int" Nullable="false" />
           <Property Name="EventTime" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tblSong">
           <Key>
             <PropertyRef Name="SongId" />
           </Key>
-          <Property Name="SongId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SongId" Type="int" Nullable="false" />
           <Property Name="SongName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="tblSongGenre">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="SongId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="GenreId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="SongId" Type="int" Nullable="false" />
+          <Property Name="GenreId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="tblVenue">
           <Key>
             <PropertyRef Name="VenueId" />
           </Key>
-          <Property Name="VenueId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="VenueId" Type="int" Nullable="false" />
           <Property Name="VenueName" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -87,73 +88,66 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="siebersdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BandZoneEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblGenre" EntityType="siebersdbModel.tblGenre" />
+          <EntitySet Name="tblMusician" EntityType="siebersdbModel.tblMusician" />
+          <EntitySet Name="tblMusicianVenueEvent" EntityType="siebersdbModel.tblMusicianVenueEvent" />
+          <EntitySet Name="tblSong" EntityType="siebersdbModel.tblSong" />
+          <EntitySet Name="tblSongGenre" EntityType="siebersdbModel.tblSongGenre" />
+          <EntitySet Name="tblVenue" EntityType="siebersdbModel.tblVenue" />
+          <EntitySet Name="tblMusicGenre" EntityType="siebersdbModel.tblMusicGenre" />
+        </EntityContainer>
         <EntityType Name="tblGenre">
           <Key>
             <PropertyRef Name="GenreId" />
           </Key>
-          <Property Name="GenreId" Type="Guid" Nullable="false" />
-          <Property Name="GenreType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GenreId" Type="Int32" Nullable="false" />
+          <Property Name="GenreType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="tblMusicGenre">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="MusicianId" Type="Guid" Nullable="false" />
-          <Property Name="GenreId" Type="Guid" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tblMusicianVenueEvent">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="MusicianId" Type="Guid" Nullable="false" />
-          <Property Name="VenueId" Type="Guid" Nullable="false" />
-          <Property Name="EventTime" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tblSong">
-          <Key>
-            <PropertyRef Name="SongId" />
-          </Key>
-          <Property Name="SongId" Type="Guid" Nullable="false" />
-          <Property Name="SongName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tblSongGenre">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Guid" Nullable="false" />
-          <Property Name="SongId" Type="Guid" Nullable="false" />
-          <Property Name="GenreId" Type="Guid" Nullable="false" />
-        </EntityType>
-        <EntityContainer Name="BandZoneEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="tblGenre" EntityType="Self.tblGenre" />
-          <EntitySet Name="tblMusicGenre" EntityType="Self.tblMusicGenre" />
-          <EntitySet Name="tblMusicianVenueEvent" EntityType="Self.tblMusicianVenueEvent" />
-          <EntitySet Name="tblSong" EntityType="Self.tblSong" />
-          <EntitySet Name="tblSongGenre" EntityType="Self.tblSongGenre" />
-          <EntitySet Name="tblMusician" EntityType="siebersdbModel.tblMusician" />
-          <EntitySet Name="tblVenue" EntityType="siebersdbModel.tblVenue" />
-        </EntityContainer>
         <EntityType Name="tblMusician">
           <Key>
             <PropertyRef Name="MusicianId" />
           </Key>
-          <Property Name="MusicianId" Type="Guid" Nullable="false" />
+          <Property Name="MusicianId" Type="Int32" Nullable="false" />
           <Property Name="BandMusicianName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="SongId" Type="Guid" />
+          <Property Name="SongId" Type="Int32" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ContactEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Website" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ProfileImage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="LoginEmail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblMusicianVenueEvent">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="MusicianId" Type="Int32" Nullable="false" />
+          <Property Name="VenueId" Type="Int32" Nullable="false" />
+          <Property Name="EventTime" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblSong">
+          <Key>
+            <PropertyRef Name="SongId" />
+          </Key>
+          <Property Name="SongId" Type="Int32" Nullable="false" />
+          <Property Name="SongName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblSongGenre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="SongId" Type="Int32" Nullable="false" />
+          <Property Name="GenreId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="tblVenue">
           <Key>
             <PropertyRef Name="VenueId" />
           </Key>
-          <Property Name="VenueId" Type="Guid" Nullable="false" />
+          <Property Name="VenueId" Type="Int32" Nullable="false" />
           <Property Name="VenueName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
@@ -165,6 +159,14 @@
           <Property Name="LoginEmail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="tblMusicGenre">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="MusicianId" Type="Int32" Nullable="false" />
+          <Property Name="GenreId" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -174,43 +176,7 @@
           <EntitySetMapping Name="tblGenre">
             <EntityTypeMapping TypeName="siebersdbModel.tblGenre">
               <MappingFragment StoreEntitySet="tblGenre">
-                <ScalarProperty Name="GenreId" ColumnName="GenreId" />
                 <ScalarProperty Name="GenreType" ColumnName="GenreType" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblMusicGenre">
-            <EntityTypeMapping TypeName="siebersdbModel.tblMusicGenre">
-              <MappingFragment StoreEntitySet="tblMusicGenre">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="MusicianId" ColumnName="MusicianId" />
-                <ScalarProperty Name="GenreId" ColumnName="GenreId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblMusicianVenueEvent">
-            <EntityTypeMapping TypeName="siebersdbModel.tblMusicianVenueEvent">
-              <MappingFragment StoreEntitySet="tblMusicianVenueEvent">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="MusicianId" ColumnName="MusicianId" />
-                <ScalarProperty Name="VenueId" ColumnName="VenueId" />
-                <ScalarProperty Name="EventTime" ColumnName="EventTime" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblSong">
-            <EntityTypeMapping TypeName="siebersdbModel.tblSong">
-              <MappingFragment StoreEntitySet="tblSong">
-                <ScalarProperty Name="SongId" ColumnName="SongId" />
-                <ScalarProperty Name="SongName" ColumnName="SongName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tblSongGenre">
-            <EntityTypeMapping TypeName="siebersdbModel.tblSongGenre">
-              <MappingFragment StoreEntitySet="tblSongGenre">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="SongId" ColumnName="SongId" />
                 <ScalarProperty Name="GenreId" ColumnName="GenreId" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -218,6 +184,7 @@
           <EntitySetMapping Name="tblMusician">
             <EntityTypeMapping TypeName="siebersdbModel.tblMusician">
               <MappingFragment StoreEntitySet="tblMusician">
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="LoginEmail" ColumnName="LoginEmail" />
                 <ScalarProperty Name="ProfileImage" ColumnName="ProfileImage" />
@@ -227,6 +194,33 @@
                 <ScalarProperty Name="SongId" ColumnName="SongId" />
                 <ScalarProperty Name="BandMusicianName" ColumnName="BandMusicianName" />
                 <ScalarProperty Name="MusicianId" ColumnName="MusicianId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMusicianVenueEvent">
+            <EntityTypeMapping TypeName="siebersdbModel.tblMusicianVenueEvent">
+              <MappingFragment StoreEntitySet="tblMusicianVenueEvent">
+                <ScalarProperty Name="EventTime" ColumnName="EventTime" />
+                <ScalarProperty Name="VenueId" ColumnName="VenueId" />
+                <ScalarProperty Name="MusicianId" ColumnName="MusicianId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSong">
+            <EntityTypeMapping TypeName="siebersdbModel.tblSong">
+              <MappingFragment StoreEntitySet="tblSong">
+                <ScalarProperty Name="SongName" ColumnName="SongName" />
+                <ScalarProperty Name="SongId" ColumnName="SongId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSongGenre">
+            <EntityTypeMapping TypeName="siebersdbModel.tblSongGenre">
+              <MappingFragment StoreEntitySet="tblSongGenre">
+                <ScalarProperty Name="GenreId" ColumnName="GenreId" />
+                <ScalarProperty Name="SongId" ColumnName="SongId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -244,6 +238,15 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="VenueName" ColumnName="VenueName" />
                 <ScalarProperty Name="VenueId" ColumnName="VenueId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMusicGenre">
+            <EntityTypeMapping TypeName="siebersdbModel.tblMusicGenre">
+              <MappingFragment StoreEntitySet="tblMusicGenre">
+                <ScalarProperty Name="GenreId" ColumnName="GenreId" />
+                <ScalarProperty Name="MusicianId" ColumnName="MusicianId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
