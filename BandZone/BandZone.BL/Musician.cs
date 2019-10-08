@@ -26,7 +26,7 @@ namespace BandZone.BL
     {
         using (var hash = new System.Security.Cryptography.SHA1Managed())
         {
-            var hashbytes = System.Text.Encoding.UTF8.GetBytes(UserPass);
+            var hashbytes = System.Text.Encoding.UTF8.GetBytes(Password);
             return Convert.ToBase64String(hash.ComputeHash(hashbytes));
         }
     }
