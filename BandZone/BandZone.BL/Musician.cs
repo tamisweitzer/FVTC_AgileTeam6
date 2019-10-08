@@ -19,51 +19,102 @@ namespace BandZone.BL
         public string Website { get; set; }
         public string ProfileImage { get; set; }
         public string LoginEmail { get; set; }
-        public string Password { get; set; }  
-    }
+        public string Password { get; set; }
 
-    private string GetHash()
-    {
-        using (var hash = new System.Security.Cryptography.SHA1Managed())
+        public Musician()
         {
-            var hashbytes = System.Text.Encoding.UTF8.GetBytes(Password);
-            return Convert.ToBase64String(hash.ComputeHash(hashbytes));
+
         }
-    }
 
-    private void Map(tblMusician musician)
-    {
-        // Move the class data to the datarow object
-        musician.MusicianId = this.MusicianId;
-        musician.BandMusicianName = this.BandMusicianName;
-        musician.LoginEmail = this.LoginEmail;
-        musician.Password = this.Password;
-    }
-
-    public void Insert()
-    {
-        try
+        public Musician (string loginemail, string password)
         {
-            BandZoneEntities dc = new BandZoneEntities();
-            tblMusician newmusician = new tblMusician();
+            LoginEmail = loginemail;
+            Password = password;
+        }
 
-            MusicianId = 1;
-            Password = GetHash();
-            if (dc.tblMusician.Any())
+        public Musician(int musicianid,
+                        string loginemail,
+                        string password,
+                        string bandmusicianname,
+                        int songid,
+                        string phone,
+                        string contactemail,
+                        string website,
+                        string profileimage)
+        {
+            MusicianId = musicianid;
+            LoginEmail = loginemail;
+            Password = password;
+            BandMusicianName = bandmusicianname;
+            SongId = songid;
+            Phone = phone;
+            ContactEmail = contactemail;
+            Website = website;
+            ProfileImage = profileimage;
+        }
+
+        public Musician(string loginemail,
+                        string password,
+                        string bandmusicianname,
+                        int songid,
+                        string phone,
+                        string contactemail,
+                        string website,
+                        string profileimage)
+        {
+            LoginEmail = loginemail;
+            Password = password;
+            BandMusicianName = bandmusicianname;
+            SongId = songid;
+            Phone = phone;
+            ContactEmail = contactemail;
+            Website = website;
+            ProfileImage = profileimage;
+        }
+
+        private string GetHash()
+        {
+            using (var hash = new System.Security.Cryptography.SHA1Managed())
             {
-                Musician = dc.tblMusician.Max(u => u.MusicianId) + 1;
+                var hashbytes = System.Text.Encoding.UTF8.GetBytes(Password);
+                return Convert.ToBase64String(hash.ComputeHash(hashbytes));
             }
-
-            Map(newmusician);
-
-            dc.tblMusician.Add(newmusician);
-            dc.SaveChanges();
-            dc = null;
-
         }
-        catch (Exception ex)
+
+        private void Map(tblMusician musician)
         {
-            throw;
+            // Move the class data to the datarow object
+            musician.MusicianId = this.MusicianId;
+            musician.BandMusicianName = this.BandMusicianName;
+            musician.LoginEmail = this.LoginEmail;
+            musician.Password = this.Password;
+        }
+
+        public void Insert()
+        {
+            try
+            {
+                BandZoneEntities dc = new BandZoneEntities();
+                tblMusician newmusician = new tblMusician();
+
+                MusicianId = 1;
+                Password = GetHash();
+                if (dc.tblMusician.Any())
+                {
+                    Musician = dc.tblMusician.Max(u => u.MusicianId) + 1;
+                }
+
+                Map(newmusician);
+
+                dc.tblMusician.Add(newmusician);
+                dc.SaveChanges();
+                dc = null;
+
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 
