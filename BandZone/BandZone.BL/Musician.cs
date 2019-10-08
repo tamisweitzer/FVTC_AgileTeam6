@@ -101,7 +101,7 @@ namespace BandZone.BL
                 Password = GetHash();
                 if (dc.tblMusician.Any())
                 {
-                    Musician = dc.tblMusician.Max(u => u.MusicianId) + 1;
+                    MusicianId = dc.tblMusician.Max(u => u.MusicianId) + 1;
                 }
 
                 Map(newmusician);
@@ -133,7 +133,7 @@ namespace BandZone.BL
                         {
                             MusicianId = c.MusicianId,
                             BandMusicianName = c.BandMusicianName,
-                            SongId = c.SongId != null ? (Guid)c.SongId : Guid.Empty,
+                            SongId = Convert.ToInt32(c.SongId),
                             Phone = c.Phone,
                             ContactEmail = c.ContactEmail,
                             Website = c.Website,
