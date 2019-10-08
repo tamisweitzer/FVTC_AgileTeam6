@@ -134,10 +134,13 @@ namespace BandZone.BL
 
                         if (musician != null)
                         {
+                            BandMusicianName = musician.BandMusicianName;
                             Description = musician.Description;
                             Phone = musician.Phone;
                             Website = musician.Website;
                             ContactEmail = musician.ContactEmail;
+                            LoginEmail = musician.LoginEmail;
+                            Password = musician.Password;
                             return dc.SaveChanges();
                         }
                         else
