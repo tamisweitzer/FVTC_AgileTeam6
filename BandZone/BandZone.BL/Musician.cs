@@ -126,51 +126,19 @@ namespace BandZone.BL
         {
             try
             {
-                using (DVDCentralEntities dc = new DVDCentralEntities())
+                using (BandZoneEntities dc = new BandZoneEntities())
                 {
                     if (Id >= 0)
-                    {
-                        tblFormat format = dc.tblFormats.Where(d => d.Id == Id).FirstOrDefault();
-
-                        if (format != null)
-                        {
-                            format.Description = Description;
-                            return dc.SaveChanges();
-                        }
-                        else
-                        {
-                            throw new Exception("Row was not found");
-                        }
-                    }
-                    else
-                    {
-                        throw new Exception("Id is not set.");
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
-        public void LoadById()
-        {
-            try
-            {
-                using (BandZoneEntities dc = new DVDCentralEntities())
-                {
-                    if (MusicianId >= 0)
                     {
                         tblMusician musician = dc.tblMusician.Where(d => d.Id == Id).FirstOrDefault();
 
                         if (musician != null)
                         {
-                            MusicianId = musician.MusicianId;
                             Description = musician.Description;
                             Phone = musician.Phone;
                             Website = musician.Website;
                             ContactEmail = musician.ContactEmail;
+                            return dc.SaveChanges();
                         }
                         else
                         {
