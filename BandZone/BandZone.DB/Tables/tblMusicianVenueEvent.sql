@@ -1,7 +1,7 @@
 ﻿CREATE TABLE [dbo].[tblMusicianVenueEvent]
 (
-	[Id] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
-    [MusicianId] UNIQUEIDENTIFIER NOT NULL, 
-    [VenueId] UNIQUEIDENTIFIER NOT NULL, 
+	[Id] INT NOT NULL PRIMARY KEY, 
+    [MusicianId] INT NOT NULL, 
+    [VenueId] INT NOT NULL, 
     [EventTime] VARCHAR(50) NOT NULL
 )

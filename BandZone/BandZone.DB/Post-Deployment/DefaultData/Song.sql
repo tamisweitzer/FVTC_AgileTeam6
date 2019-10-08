@@ -1,8 +1,8 @@
 ﻿BEGIN
 	INSERT INTO tblSong(SongId, SongName)
 	VALUES
-	(NEWID(), 'Playing'),
-	(NEWID(), 'Performing'),
-	(NEWID(), 'Singing')
+	(1, 'Playing'),
+	(2, 'Performing'),
+	(3, 'Singing')
 END
 GO

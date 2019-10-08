@@ -10,18 +10,61 @@ namespace BandZone.BL
 {
     public class Musician
     {
-        public Guid MusicianId { get; set; }
+        public int MusicianId { get; set; }
         [DisplayName("List of Bands and Musicians")]
         public string BandMusicianName { get; set; }
-        public Guid SongId { get; set; }
+        public int SongId { get; set; }
         public string Phone { get; set; }
         public string ContactEmail { get; set; }
         public string Website { get; set; }
         public string ProfileImage { get; set; }
         public string LoginEmail { get; set; }
         public string Password { get; set; }  
+    }
 
+    private string GetHash()
+    {
+        using (var hash = new System.Security.Cryptography.SHA1Managed())
+        {
+            var hashbytes = System.Text.Encoding.UTF8.GetBytes(Password);
+            return Convert.ToBase64String(hash.ComputeHash(hashbytes));
+        }
+    }
 
+    private void Map(tblMusician musician)
+    {
+        // Move the class data to the datarow object
+        musician.MusicianId = this.MusicianId;
+        musician.BandMusicianName = this.BandMusicianName;
+        musician.LoginEmail = this.LoginEmail;
+        musician.Password = this.Password;
+    }
+
+    public void Insert()
+    {
+        try
+        {
+            BandZoneEntities dc = new BandZoneEntities();
+            tblMusician newmusician = new tblMusician();
+
+            MusicianId = 1;
+            Password = GetHash();
+            if (dc.tblMusician.Any())
+            {
+                Musician = dc.tblMusician.Max(u => u.MusicianId) + 1;
+            }
+
+            Map(newmusician);
+
+            dc.tblMusician.Add(newmusician);
+            dc.SaveChanges();
+            dc = null;
+
+        }
+        catch (Exception ex)
+        {
+            throw;
+        }
     }
 
     public class MusicianList : List<Musician>
