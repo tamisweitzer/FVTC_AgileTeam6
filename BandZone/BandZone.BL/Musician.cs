@@ -128,9 +128,9 @@ namespace BandZone.BL
             {
                 using (BandZoneEntities dc = new BandZoneEntities())
                 {
-                    if (Id >= 0)
+                    if (MusicianId >= 0)
                     {
-                        tblMusician musician = dc.tblMusician.Where(d => d.Id == Id).FirstOrDefault();
+                        tblMusician musician = dc.tblMusician.Where(d => d.MusicianId == MusicianId).FirstOrDefault();
 
                         if (musician != null)
                         {
@@ -165,9 +165,9 @@ namespace BandZone.BL
                 {
                     if (MusicianId >= 0)
                     {
-                        tblMusician musician = dc.tblMusician.Where(d => d.Id == Id).FirstOrDefault();
+                        tblMusician musician = dc.tblMusician.Where(d => d.MusicianId == MusicianId).FirstOrDefault();
 
-                        if (format != null)
+                        if (musician != null)
                         {
                             MusicianId = musician.MusicianId;
                             Description = musician.Description;
@@ -200,7 +200,7 @@ namespace BandZone.BL
                 {
                     if (MusicianId >= 0)
                     {
-                        tblMusician musician = dc.tblMusician.Where(d => d.Id == Id).FirstOrDefault();
+                        tblMusician musician = dc.tblMusician.Where(d => d.MusicianId == MusicianId).FirstOrDefault();
 
                         if (musician != null)
                         {
