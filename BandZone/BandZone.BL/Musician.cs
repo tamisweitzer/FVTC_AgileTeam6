@@ -1,10 +1,10 @@
-﻿using System;
+﻿using BandZone.PL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BandZone.PL;
 
 namespace BandZone.BL
 {

@@ -3,7 +3,9 @@
   <PropertyGroup>
     <StartupScript>(Blank)</StartupScript>
     <StartAction>StartNone</StartAction>
-    <TargetConnectionString>Data Source=footedb.database.windows.net;Initial Catalog=siebersdb;Persist Security Info=True;User ID=footedb;Pooling=False;MultipleActiveResultSets=False;Connect Timeout=60;Encrypt=True;TrustServerCertificate=False</TargetConnectionString>
-    <TargetDatabase>siebersdb</TargetDatabase>
+    <TargetConnectionString>
+    </TargetConnectionString>
+    <TargetDatabase>
+    </TargetDatabase>
   </PropertyGroup>
 </Project>
