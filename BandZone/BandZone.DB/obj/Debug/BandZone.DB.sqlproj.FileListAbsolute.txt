@@ -30,3 +30,7 @@ C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\bin\Debug\BandZone.DB.pdb
 C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\obj\Debug\BandZone.DB.sqlprojAssemblyReference.cache
 C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\obj\Debug\BandZone.DB.dll
 C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb
+C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\obj\Debug\Model.xml
+C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\obj\Debug\refactor.xml
+C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\obj\Debug\postdeploy.sql
+C:\Users\Eli\Desktop\BandZone\BandZone\BandZone.DB\obj\Debug\predeploy.sql
