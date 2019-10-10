@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-// add using statement to model & BL
 using BandZone.BL;
 
 
@@ -36,6 +35,4 @@ namespace BandZone.UI.Controllers
 
         
     }
-
-    
 }
