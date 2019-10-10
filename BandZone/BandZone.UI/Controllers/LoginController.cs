@@ -3,21 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-// add using statement to model & BL
+using BandZone.BL;
+
 
 namespace BandZone.UI.Controllers
 {
     public class LoginController : Controller
     {
         // GET: Login
-        public ActionResult Create()
+        public ActionResult Login(string username, string password)
         {
-            ViewBag.Message = "Login page";
+
+            return View();
+        }
+
+        // Logout
+        public ActionResult Logout()
+        {
+            HttpContext.Session["user"] = null;
+            return View();
+        }
+
+
+        // Create an account
+        // ? Remove this? We have a create account action in the Musician and Venue
+        public ActionResult Create(string returnurl)
+        {
+            ViewBag.ReturnUrl = returnurl;
             return View();
         }
 
         
     }
-
-    
 }
