@@ -161,17 +161,6 @@ footer {
     margin: 3rem 2rem;
 }
 
-.musician-create-wrapper {
-    margin: 3rem 2rem;
-}
-
-.musician-edit-wrapper {
-    margin: 3rem 2rem;
-}
-
-.musician-delete-wrapper {
-    margin: 3rem 2rem;
-}
 .musician-call-to-action {
     border: 1px solid #c1e0f3;
     border-radius: 5px;
@@ -180,13 +169,28 @@ footer {
     background-color: #ebf5fb;
     text-align: center;
 }
-.musician-call-to-action h3 {
+
+    .musician-call-to-action h3 {
         color: #337ab7;
- }
-.musician-call-to-action button {
-    margin: 2rem;
-    padding: 1rem 3rem;
+    }
+
+    .musician-call-to-action button {
+        margin: 2rem;
+        padding: 1rem 3rem;
+    }
+
+    .musician-call-to-action a {
+        color: #fff;
+    }
+
+.musician-create-wrapper {
+    margin: calc(50px + 3rem);
 }
-.musician-call-to-action a {
-    color: #fff;
+
+.musician-edit-wrapper {
+    margin: calc(50px + 3rem);
+}
+
+.musician-delete-wrapper {
+    margin: calc(50px + 3rem);
 }

@@ -15,9 +15,12 @@ namespace BandZone.BL
         public string BandMusicianName { get; set; }
         public int SongId { get; set; }
         public string Phone { get; set; }
+        [DisplayName("Contact Email")]
         public string ContactEmail { get; set; }
         public string Website { get; set; }
+        [DisplayName("Profile Image")]
         public string ProfileImage { get; set; }
+        [DisplayName("Login Email")]
         public string LoginEmail { get; set; }
         public string Password { get; set; }
         public string Description { get; set; }
