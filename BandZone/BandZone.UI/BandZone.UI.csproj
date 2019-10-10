@@ -202,6 +202,7 @@
     <Content Include="Views\Venue\Edit.cshtml" />
     <Content Include="Views\Venue\Delete.cshtml" />
     <Content Include="Views\Login\Logout.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
