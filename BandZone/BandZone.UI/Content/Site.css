@@ -207,3 +207,10 @@ footer {
 .musician-delete-wrapper {
     margin: calc(50px + 3rem);
 }
+.musician-delete-wrapper dl {
+    margin: 3rem 0rem;
+}
+
+.musician-delete-wrapper dt, .musician-delete-wrapper dd {
+    margin-bottom: 1rem;
+}
