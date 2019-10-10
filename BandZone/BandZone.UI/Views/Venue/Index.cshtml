@@ -1,12 +1,38 @@
-﻿
+﻿@model IEnumerable<BandZone.BL.Venue>
+
 @{
-    ViewBag.Title = "Venue Index";
+    ViewBag.Title = " Venue Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <!-- Header - set the background image for the header in the line below -->
 <div class="banner_list">
-    <div class="bg-image-full" style="background-image: url('../../images/bar_banner.jpg');">
+    <div class="bg-image-full" style="background-image: url('../../images/guitar.jpg');">
         <h1 class="centered display-2 font-weight-bold text-white">Bars & Restaurants</h1>
     </div>
 </div>
 
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VenueName)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+               
+                @Html.ActionLink(item.VenueName, "Details", "Venue", new { Id = item.VenueId }, null)
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div>
+    <button class="btn btn-large">@Html.ActionLink("Create an account", "Create")</button>
+</div>

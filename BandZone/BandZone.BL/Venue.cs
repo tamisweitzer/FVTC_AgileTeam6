@@ -36,6 +36,13 @@ namespace BandZone.BL
             // Move the class data to the datarow object
             venue.VenueId = this.VenueId;
             venue.VenueName = this.VenueName;
+            venue.Address = this.Address;
+            venue.City = this.City;
+            venue.OpenTime = this.OpenTime;
+            venue.CloseTime = this.CloseTime;
+            venue.ContactEmail = this.ContactEmail;
+            venue.Phone = this.Phone;
+            venue.ProfileImage = this.ProfileImage;
             venue.LoginEmail = this.LoginEmail;
             venue.Password = this.Password;
         }
@@ -79,8 +86,17 @@ namespace BandZone.BL
 
                         if (venue != null)
                         {
-                            Phone = venue.Phone;
-                            ContactEmail = venue.ContactEmail;
+                            venue.VenueName = this.VenueName;
+                            venue.Address = this.Address;
+                            venue.City = this.City;
+                            venue.OpenTime = this.OpenTime;
+                            venue.CloseTime = this.CloseTime;
+                            venue.ContactEmail = this.ContactEmail;
+                            venue.Phone = this.Phone;
+                            venue.ProfileImage = this.ProfileImage;
+                            venue.LoginEmail = this.LoginEmail;
+                            //venue.Password = this.Password;
+                            
                             return dc.SaveChanges();
                         }
                         else
@@ -112,9 +128,17 @@ namespace BandZone.BL
 
                         if (venue != null)
                         {
-                            VenueId = venue.VenueId;
-                            Phone = venue.Phone;
-                            ContactEmail = venue.ContactEmail;
+                            this.VenueId = venue.VenueId;
+                            this.VenueName = venue.VenueName;
+                            this.Address = venue.Address;
+                            this.City = venue.City;
+                            this.OpenTime = venue.OpenTime;
+                            this.CloseTime = venue.CloseTime;
+                            this.ContactEmail = venue.ContactEmail;
+                            this.Phone = venue.Phone;
+                            this.ProfileImage = venue.ProfileImage;
+                            this.LoginEmail = venue.LoginEmail;
+                            
                         }
                         else
                         {
@@ -165,4 +189,43 @@ namespace BandZone.BL
             }
         }
     }
+
+
+    public class VenueList : List<Venue>
+    {
+        public void Load()
+        {
+            try
+            {
+                using (BandZoneEntities dc = new BandZoneEntities())
+                {
+                    var results = dc.tblVenue;
+                    foreach (tblVenue c in results)
+                    {
+                        Venue venue = new Venue
+                        {
+                            VenueId = c.VenueId,
+                            VenueName = c.VenueName,
+                            Address = c.Address,
+                            City = c.City,
+                            OpenTime = c.OpenTime,
+                            CloseTime = c.CloseTime,
+                            ContactEmail = c.ContactEmail,
+                            Phone = c.Phone,
+                            ProfileImage = c.ProfileImage,
+                            LoginEmail = c.LoginEmail,
+                            Password = c.Password
+                        };
+
+                        this.Add(venue);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+    }
+
 }
