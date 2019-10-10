@@ -27,7 +27,7 @@ namespace BandZone.BL
 
         }
 
-        public Musician (string loginemail, string password)
+        public Musician(string loginemail, string password)
         {
             LoginEmail = loginemail;
             Password = password;
@@ -91,8 +91,14 @@ namespace BandZone.BL
             // Move the class data to the datarow object
             musician.MusicianId = this.MusicianId;
             musician.BandMusicianName = this.BandMusicianName;
+            musician.SongId = this.SongId;
+            musician.Phone = this.Phone;
+            musician.ContactEmail = this.ContactEmail;
+            musician.Website = this.Website;
+            musician.ProfileImage = this.ProfileImage;
             musician.LoginEmail = this.LoginEmail;
             musician.Password = this.Password;
+            musician.Description = this.Description;
         }
 
         public void Insert()
@@ -134,13 +140,24 @@ namespace BandZone.BL
 
                         if (musician != null)
                         {
-                            BandMusicianName = musician.BandMusicianName;
-                            Description = musician.Description;
-                            Phone = musician.Phone;
-                            Website = musician.Website;
-                            ContactEmail = musician.ContactEmail;
-                            LoginEmail = musician.LoginEmail;
-                            Password = musician.Password;
+                            //BandMusicianName = musician.BandMusicianName;
+                            //Description = musician.Description;
+                            //Phone = musician.Phone;
+                            //Website = musician.Website;
+                            //ContactEmail = musician.ContactEmail;
+                            //LoginEmail = musician.LoginEmail;
+                            //Password = musician.Password;
+
+                            musician.BandMusicianName = this.BandMusicianName;
+                            musician.SongId = this.SongId;
+                            musician.Phone = this.Phone;
+                            musician.ContactEmail = this.ContactEmail;
+                            musician.Website = this.Website;
+                            musician.ProfileImage = this.ProfileImage;
+                            musician.LoginEmail = this.LoginEmail;
+                            //musician.Password = this.Password;
+                            musician.Description = this.Description;
+
                             return dc.SaveChanges();
                         }
                         else
@@ -172,11 +189,17 @@ namespace BandZone.BL
 
                         if (musician != null)
                         {
-                            MusicianId = musician.MusicianId;
-                            Description = musician.Description;
-                            Phone = musician.Phone;
-                            Website = musician.Website;
-                            ContactEmail = musician.ContactEmail;
+
+                            this.MusicianId = musician.MusicianId;
+                            this.BandMusicianName = musician.BandMusicianName;
+                            this.SongId = Convert.ToInt32(musician.SongId);
+                            this.Phone = musician.Phone;
+                            this.ContactEmail = musician.ContactEmail;
+                            this.Website = musician.Website;
+                            this.ProfileImage = musician.ProfileImage;
+                            this.LoginEmail = musician.LoginEmail;
+                            this.Description = musician.Description;
+
                         }
                         else
                         {
@@ -262,3 +285,4 @@ namespace BandZone.BL
         }
     }
 }
+

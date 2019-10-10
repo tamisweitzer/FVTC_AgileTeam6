@@ -195,6 +195,14 @@
     <Content Include="Views\Schedules\Index.cshtml" />
     <Content Include="Views\Musician\Create.cshtml" />
     <Content Include="Views\Musician\Edit.cshtml" />
+    <Content Include="Views\Musician\Details.cshtml" />
+    <Content Include="Views\Musician\Delete.cshtml" />
+    <Content Include="Views\Venue\Details.cshtml" />
+    <Content Include="Views\Venue\Create.cshtml" />
+    <Content Include="Views\Venue\Edit.cshtml" />
+    <Content Include="Views\Venue\Delete.cshtml" />
+    <Content Include="Views\Login\Logout.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

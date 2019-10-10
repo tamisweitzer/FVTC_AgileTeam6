@@ -24,6 +24,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.BandMusicianName)
+                |
+               
+                @Html.ActionLink(item.BandMusicianName, "Details", "Musician", new { Id = item.MusicianId }, null)
             </td>
         </tr>
     }

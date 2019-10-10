@@ -94,6 +94,7 @@ namespace BandZone.UI.Controllers
             try
             {
                 // TODO: Add delete logic here
+                musician.MusicianId = id;
                 musician.Delete();
                 return RedirectToAction("Index");
             }
