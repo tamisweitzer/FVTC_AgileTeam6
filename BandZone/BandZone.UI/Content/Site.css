@@ -144,3 +144,49 @@ footer {
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+
+
+/*  Colors  https://www.color-hex.com/color/ebf5fb */
+/*
+#ebf5fb - very light blue  
+#d6eaf7 - light blue
+#c1e0f3 - light medium 
+#abd5ee - medium light blue
+#337ab7 - bootstrap medium blue/primary blue
+
+*/
+
+/* Musician Pages */
+.musician-index-wrapper {
+    margin: 3rem 2rem;
+}
+
+.musician-create-wrapper {
+    margin: 3rem 2rem;
+}
+
+.musician-edit-wrapper {
+    margin: 3rem 2rem;
+}
+
+.musician-delete-wrapper {
+    margin: 3rem 2rem;
+}
+.musician-call-to-action {
+    border: 1px solid #c1e0f3;
+    border-radius: 5px;
+    margin: 3rem;
+    padding: 2rem 2rem 3rem 2rem;
+    background-color: #ebf5fb;
+    text-align: center;
+}
+.musician-call-to-action h3 {
+        color: #337ab7;
+ }
+.musician-call-to-action button {
+    margin: 2rem;
+    padding: 1rem 3rem;
+}
+.musician-call-to-action a {
+    color: #fff;
+}

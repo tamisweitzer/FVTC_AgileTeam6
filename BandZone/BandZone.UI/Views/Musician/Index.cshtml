@@ -12,28 +12,42 @@
     </div>
 </div>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.BandMusicianName)
-        </th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div class="musician-index-wrapper">
+    <table class="table table-striped ">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.BandMusicianName)
-                |
-               
-                @Html.ActionLink(item.BandMusicianName, "Details", "Musician", new { Id = item.MusicianId }, null)
-            </td>
+            @*<th>
+                @Html.DisplayNameFor(model => model.BandMusicianName)
+            </th>*@
+
+            <th>Name</th>
+            <th>Genre</th>
+            <th>More</th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BandMusicianName)
+                 </td>
+                <td>
+                       Genre
+                </td>
 
+                <td>
+                    @Html.ActionLink("See More...", "Details", "Musician", new { Id = item.MusicianId }, null)
+                </td>
+            </tr>
+        }
+    </table>
 
-<div>
-    <button class="btn btn-large">@Html.ActionLink("Create an account", "Create")</button>
+    <div class="musician-call-to-action">
+        <h3>Sign up your Band</h3>
+        <p>If you are a band or a musician and would like to joing BandZone, sign up now.</p>
+        <button class="btn btn-large btn-primary">@Html.ActionLink("Create an account", "Create")</button>
+    </div>
 </div>
+
+
+
+
