@@ -187,9 +187,22 @@ footer {
     margin: calc(50px + 3rem);
 }
 
+
 .musician-edit-wrapper {
     margin: calc(50px + 3rem);
 }
+
+
+.musician-details-wrapper {
+    margin: calc(50px + 3rem);
+}
+.musician-details-wrapper dl {
+    margin: 3rem 0rem;
+}
+.musician-details-wrapper dt, .musician-details-wrapper dd {
+    margin-bottom: 1rem;
+}
+
 
 .musician-delete-wrapper {
     margin: calc(50px + 3rem);
