@@ -146,6 +146,9 @@ footer {
 }
 
 
+
+
+/* Musician Pages */
 /*  Colors  https://www.color-hex.com/color/ebf5fb */
 /*
 #ebf5fb - very light blue  
@@ -156,7 +159,6 @@ footer {
 
 */
 
-/* Musician Pages */
 .musician-index-wrapper {
     margin: 3rem 2rem;
 }
@@ -214,3 +216,76 @@ footer {
 .musician-delete-wrapper dt, .musician-delete-wrapper dd {
     margin-bottom: 1rem;
 }
+
+
+
+
+/* Venue Pages */
+/* Colors https://www.color-hex.com/color/eafaf1   */
+/*
+    
+#eafaf1 - very light green
+#d5f5d6 - light green
+#c1f0d6 - light medium green
+#acebc8 - medium light green
+#5cb85c - Bootstrap Success green
+
+*/
+
+.venue-index-wrapper {
+    margin: 3rem 2rem;
+}
+
+.venue-call-to-action {
+    border: 1px solid #c1f0d6;
+    border-radius: 5px;
+    margin: 3rem;
+    padding: 2rem 2rem 3rem 2rem;
+    background-color: #eafaf1;
+    text-align: center;
+}
+
+    .venue-call-to-action h3 {
+        color: #5cb85c;
+    }
+
+    .venue-call-to-action button {
+        margin: 2rem;
+        padding: 1rem 3rem;
+    }
+
+    .venue-call-to-action a {
+        color: #fff;
+    }
+
+.venue-create-wrapper {
+    margin: calc(50px + 3rem);
+}
+
+.venue-edit-wrapper {
+    margin: calc(50px + 3rem);
+}
+
+.venue-details-wrapper {
+    margin: calc(50px + 3rem);
+}
+
+    .venue-details-wrapper dl {
+        margin: 3rem 0rem;
+    }
+
+    .venue-details-wrapper dt, .musician-details-wrapper dd {
+        margin-bottom: 1rem;
+    }
+
+.venue-delete-wrapper {
+    margin: calc(50px + 3rem);
+}
+
+    .venue-delete-wrapper dl {
+        margin: 3rem 0rem;
+    }
+
+    .venue-delete-wrapper dt, .musician-delete-wrapper dd {
+        margin-bottom: 1rem;
+    }
