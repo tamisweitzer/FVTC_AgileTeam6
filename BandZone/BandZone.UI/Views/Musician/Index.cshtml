@@ -21,14 +21,14 @@
 
             <th>Name</th>
             <th>Genre</th>
-            <th>More</th>
+            <th>Website</th>
         </tr>
 
         @foreach (var item in Model)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.BandMusicianName)
+                    @Html.ActionLink(item.BandMusicianName, "Details", "Musician", new { Id = item.MusicianId }, null)
                  </td>
                 <td>
                        Genre
@@ -36,7 +36,7 @@
                 </td>
 
                 <td>
-                    @Html.ActionLink("See More...", "Details", "Musician", new { Id = item.MusicianId }, null)
+                    @Html.DisplayFor(modelItem => item.Website)
                 </td>
             </tr>
         }
