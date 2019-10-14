@@ -117,8 +117,17 @@ h4 {
 }
 
 footer {
-    margin-left: 20px;
+    margin: 0;
+    height: 200px;
+    border-top: 1px solid #222;
 }
+.footer-copyright {
+    margin-top: 5rem;
+    padding: 1rem;
+    color: #9d9d9d;
+    text-align: center;
+}
+
 
 
 /* Login Page */
@@ -128,8 +137,8 @@ footer {
 }
 
 .login-musician-section {
-    background-color: #EBF5FB;
-    border: 1px solid #eee;
+    background-color: #f7f6f9;
+    border: 1px solid #e7e6e9;
     border-radius: 5px;
     padding: 1rem;
     margin-top: 2rem;
@@ -137,8 +146,8 @@ footer {
 }
 
 .login-venue-section {
-    background-color: #EAFAF1;
-    border: 1px solid #eee;
+    background-color: #f7f6f9;
+    border: 1px solid #e7e6e9;
     border-radius: 5px;
     padding: 1rem;
     margin-top: 2rem;
@@ -149,31 +158,22 @@ footer {
 
 
 /* Musician Pages */
-/*  Colors  https://www.color-hex.com/color/ebf5fb */
-/*
-#ebf5fb - very light blue  
-#d6eaf7 - light blue
-#c1e0f3 - light medium 
-#abd5ee - medium light blue
-#337ab7 - bootstrap medium blue/primary blue
-
-*/
 
 .musician-index-wrapper {
     margin: 3rem 2rem;
 }
 
 .musician-call-to-action {
-    border: 1px solid #c1e0f3;
+    border: 1px solid #e7e6e9;
     border-radius: 5px;
     margin: 3rem;
     padding: 2rem 2rem 3rem 2rem;
-    background-color: #ebf5fb;
+    background-color: #f7f6f9;
     text-align: center;
 }
 
     .musician-call-to-action h3 {
-        color: #337ab7;
+        color: #17a2b8;
     }
 
     .musician-call-to-action button {
@@ -221,32 +221,22 @@ footer {
 
 
 /* Venue Pages */
-/* Colors https://www.color-hex.com/color/eafaf1   */
-/*
-    
-#eafaf1 - very light green
-#d5f5d6 - light green
-#c1f0d6 - light medium green
-#acebc8 - medium light green
-#5cb85c - Bootstrap Success green
-
-*/
 
 .venue-index-wrapper {
     margin: 3rem 2rem;
 }
 
 .venue-call-to-action {
-    border: 1px solid #c1f0d6;
+    border: 1px solid #e7e6e9;
     border-radius: 5px;
     margin: 3rem;
     padding: 2rem 2rem 3rem 2rem;
-    background-color: #eafaf1;
+    background-color: #f7f6f9;
     text-align: center;
 }
 
     .venue-call-to-action h3 {
-        color: #5cb85c;
+        color: #17a2b8;
     }
 
     .venue-call-to-action button {

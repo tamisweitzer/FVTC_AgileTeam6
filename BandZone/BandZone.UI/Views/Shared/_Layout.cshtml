@@ -26,32 +26,32 @@
             @Html.ActionLink("Band Zone", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
         </div>
 
-            <div class="collapse navbar-collapse" id="navigation">
-                <ul class="nav navbar-nav">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Musicians", "Index", "Musician")</li>
-                    <li>@Html.ActionLink("Venues", "Index", "Venue")</li>
-                    <li>@Html.ActionLink("Schedules", "Index", "Schedules")</li>
+        <div class="collapse navbar-collapse" id="navigation">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Musicians", "Index", "Musician")</li>
+                <li>@Html.ActionLink("Venues", "Index", "Venue")</li>
+                <li>@Html.ActionLink("Schedules", "Index", "Schedules")</li>
 
-                </ul>
-                <!-- Login link in it's own ul element so it will float right -->
-                <ul class="nav navbar-nav navbar-right ml-2">
-                    <li>@Html.ActionLink("Login", "Login", "Login")</li>
-                    <li>@Html.ActionLink("Log Out", "Logout", "Login")</li>
-                </ul>
-            </div>
+            </ul>
+            <!-- Login link in it's own ul element so it will float right -->
+            <ul class="nav navbar-nav navbar-right ml-2">
+                <li>@Html.ActionLink("Login", "Login", "Login")</li>
+                <li>@Html.ActionLink("Log Out", "Logout", "Login")</li>
+            </ul>
+        </div>
     </nav>
 
-        <div class=" body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - Band Zone</p>
-            </footer>
-        </div>
+    <div class=" body-content">
+        @RenderBody()
+    </div>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @RenderSection("scripts", required: false)
+    <footer class="bg-dark">
+        <div class="footer-copyright">&copy; @DateTime.Now.Year - Band Zone</div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
