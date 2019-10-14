@@ -15,9 +15,9 @@ namespace BandZone.BL
         public string VenueName { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
-        [DisplayName("Business Opens")]
+        [DisplayName("Time Business Opens")]
         public string OpenTime { get; set; }
-        [DisplayName("Business Closes")]
+        [DisplayName("Time Business Closes")]
         public string CloseTime { get; set; }
         [DisplayName("Contact Email")]
         public string ContactEmail { get; set; }
