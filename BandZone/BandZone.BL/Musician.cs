@@ -201,7 +201,7 @@ namespace BandZone.BL
                             this.Website = musician.Website;
                             this.ProfileImage = musician.ProfileImage;
                             this.LoginEmail = musician.LoginEmail;
-                            this.Description = musician.Description;
+                            this.Description = musician.Description;                            
 
                         }
                         else
@@ -252,7 +252,62 @@ namespace BandZone.BL
                 throw ex;
             }
         }
+
+        public bool Login()
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(LoginEmail))
+                {
+                    if (!string.IsNullOrEmpty(Password))
+                    {
+                        BandZoneEntities dc = new BandZoneEntities();
+                        tblMusician musician = dc.tblMusician.FirstOrDefault(u => u.LoginEmail == LoginEmail);
+                        if (musician != null)
+                        {
+                            if (musician.Password == GetHash())
+                            {
+                                // Successful login
+                                this.MusicianId = musician.MusicianId;
+                                this.BandMusicianName = musician.BandMusicianName;
+                                this.SongId = Convert.ToInt32(musician.SongId);
+                                this.Phone = musician.Phone;
+                                this.ContactEmail = musician.ContactEmail;
+                                this.Website = musician.Website;
+                                this.ProfileImage = musician.ProfileImage;
+                                this.Description = musician.Description;
+                                return true;
+                            }
+                            else
+                            {
+                                throw new Exception("Email or password incorrect");
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception("User Id could not be found");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Password needs to be set");
+                    }
+                }
+                else
+                {
+                    throw new Exception("User Id needs to be set");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        // comment for commit
     }
+
+
 
     public class MusicianList : List<Musician>
     {
