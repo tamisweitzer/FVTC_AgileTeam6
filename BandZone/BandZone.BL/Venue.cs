@@ -194,6 +194,60 @@ namespace BandZone.BL
                 throw ex;
             }
         }
+
+        public bool Login()
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(LoginEmail))
+                {
+                    if (!string.IsNullOrEmpty(Password))
+                    {
+                        BandZoneEntities dc = new BandZoneEntities();
+                        tblVenue venue = dc.tblVenue.FirstOrDefault(u => u.LoginEmail == LoginEmail);
+                        if (venue != null)
+                        {
+                            if (venue.Password == GetHash())
+                            {
+                                // Successful login
+                                this.VenueId = venue.VenueId;
+                                this.VenueName = venue.VenueName;
+                                this.Phone = venue.Phone;
+                                this.ContactEmail = venue.ContactEmail;
+                                this.ProfileImage = venue.ProfileImage;
+                                this.Address = venue.Address;
+                                this.OpenTime = venue.OpenTime;
+                                this.CloseTime = venue.CloseTime;
+                                this.City = venue.City;
+                                return true;
+                            }
+                            else
+                            {
+                                throw new Exception("Email or password incorrect");
+                            }
+                        }
+                        else
+                        {
+                            throw new Exception("User Id could not be found");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Password needs to be set");
+                    }
+                }
+                else
+                {
+                    throw new Exception("User Id needs to be set");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        // Comment for commi
     }
 
 
