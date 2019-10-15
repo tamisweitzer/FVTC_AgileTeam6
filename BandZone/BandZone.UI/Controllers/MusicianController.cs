@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BandZone.BL;
+using BandZone.UI.Model;
 
 namespace BandZone.UI.Controllers
 {
@@ -53,13 +54,23 @@ namespace BandZone.UI.Controllers
             }
         }
 
+        
+        
+        
         // GET: Musician/Edit/5
         public ActionResult Edit(int id)
-        {
-            Musician musician = new Musician();
-            musician.MusicianId = id;
-            musician.LoadById();
-            return View(musician);
+        {            
+            if (Authenticate.IsAuthenticated())
+                {
+                    Musician musician = new Musician();
+                    musician.MusicianId = id;
+                    musician.LoadById();
+                    return View(musician);
+                }
+            else
+            {
+                return RedirectToAction("Create", "Login", new { returnurl = HttpContext.Request.Url});
+            }
         }
 
         // POST: Customer/Edit/5

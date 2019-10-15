@@ -11,14 +11,20 @@ namespace BandZone.BL
     public class Venue
     {
         public int VenueId { get; set; }
+        [DisplayName("Venue Name")]
         public string VenueName { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
+        [DisplayName("Time Business Opens")]
         public string OpenTime { get; set; }
+        [DisplayName("Time Business Closes")]
         public string CloseTime { get; set; }
+        [DisplayName("Contact Email")]
         public string ContactEmail { get; set; }
         public string Phone { get; set; }
+        [DisplayName("Profile Image")]
         public string ProfileImage { get; set; }
+        [DisplayName("Login Email")]
         public string LoginEmail { get; set; }
         public string Password { get; set; }
 

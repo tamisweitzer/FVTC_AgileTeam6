@@ -98,7 +98,7 @@ h4 {
 
 .bg-image-full {
     height: 100vh;
-    max-height: 300px;
+    max-height: 350px;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -117,8 +117,17 @@ h4 {
 }
 
 footer {
-    margin-left: 20px;
+    margin: 0;
+    height: 200px;
+    border-top: 1px solid #222;
 }
+.footer-copyright {
+    margin-top: 5rem;
+    padding: 1rem;
+    color: #9d9d9d;
+    text-align: center;
+}
+
 
 
 /* Login Page */
@@ -128,8 +137,8 @@ footer {
 }
 
 .login-musician-section {
-    background-color: #EBF5FB;
-    border: 1px solid #eee;
+    background-color: #f7f6f9;
+    border: 1px solid #e7e6e9;
     border-radius: 5px;
     padding: 1rem;
     margin-top: 2rem;
@@ -137,10 +146,136 @@ footer {
 }
 
 .login-venue-section {
-    background-color: #EAFAF1;
-    border: 1px solid #eee;
+    background-color: #f7f6f9;
+    border: 1px solid #e7e6e9;
     border-radius: 5px;
     padding: 1rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
+
+
+
+
+/* Musician Pages */
+
+.musician-index-wrapper {
+    margin: 3rem 2rem;
+}
+
+.musician-call-to-action {
+    border: 1px solid #e7e6e9;
+    border-radius: 5px;
+    margin: 3rem;
+    padding: 2rem 2rem 3rem 2rem;
+    background-color: #f7f6f9;
+    text-align: center;
+}
+
+    .musician-call-to-action h3 {
+        color: #17a2b8;
+    }
+
+    .musician-call-to-action button {
+        margin: 2rem;
+        padding: 1rem 3rem;
+    }
+
+    .musician-call-to-action a {
+        color: #fff;
+    }
+
+.musician-create-wrapper {
+    margin: calc(50px + 3rem);
+}
+
+
+.musician-edit-wrapper {
+    margin: calc(50px + 3rem);
+}
+
+
+.musician-details-wrapper {
+    margin: calc(50px + 3rem);
+}
+.musician-details-wrapper dl {
+    margin: 3rem 0rem;
+}
+.musician-details-wrapper dt, .musician-details-wrapper dd {
+    margin-bottom: 1rem;
+}
+
+
+.musician-delete-wrapper {
+    margin: calc(50px + 3rem);
+}
+.musician-delete-wrapper dl {
+    margin: 3rem 0rem;
+}
+
+.musician-delete-wrapper dt, .musician-delete-wrapper dd {
+    margin-bottom: 1rem;
+}
+
+
+
+
+/* Venue Pages */
+
+.venue-index-wrapper {
+    margin: 3rem 2rem;
+}
+
+.venue-call-to-action {
+    border: 1px solid #e7e6e9;
+    border-radius: 5px;
+    margin: 3rem;
+    padding: 2rem 2rem 3rem 2rem;
+    background-color: #f7f6f9;
+    text-align: center;
+}
+
+    .venue-call-to-action h3 {
+        color: #17a2b8;
+    }
+
+    .venue-call-to-action button {
+        margin: 2rem;
+        padding: 1rem 3rem;
+    }
+
+    .venue-call-to-action a {
+        color: #fff;
+    }
+
+.venue-create-wrapper {
+    margin: calc(50px + 3rem);
+}
+
+.venue-edit-wrapper {
+    margin: calc(50px + 3rem);
+}
+
+.venue-details-wrapper {
+    margin: calc(50px + 3rem);
+}
+
+    .venue-details-wrapper dl {
+        margin: 3rem 0rem;
+    }
+
+    .venue-details-wrapper dt, .musician-details-wrapper dd {
+        margin-bottom: 1rem;
+    }
+
+.venue-delete-wrapper {
+    margin: calc(50px + 3rem);
+}
+
+    .venue-delete-wrapper dl {
+        margin: 3rem 0rem;
+    }
+
+    .venue-delete-wrapper dt, .musician-delete-wrapper dd {
+        margin-bottom: 1rem;
+    }

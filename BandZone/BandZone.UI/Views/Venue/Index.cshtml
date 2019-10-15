@@ -13,26 +13,35 @@
 </div>
 
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.VenueName)
-        </th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div class="venue-index-wrapper">
+    <table class="table table-striped">
         <tr>
-            <td>
-               
-                @Html.ActionLink(item.VenueName, "Details", "Venue", new { Id = item.VenueId }, null)
-
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.VenueName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.City)
+            </th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
 
-<div>
-    <button class="btn btn-large">@Html.ActionLink("Create an account", "Create")</button>
+                    @Html.ActionLink(item.VenueName, "Details", "Venue", new { Id = item.VenueId }, null)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+            </tr>
+        }
+    </table>
+
+
+    <div class="venue-call-to-action">
+        <h3>Sign up your Bar or Restaurant</h3>
+        <p class="text-secondary">If you are a bar or restaurant and would like to join BandZone, sign up now.</p>
+        <button class="btn btn-large btn-info">@Html.ActionLink("Create an account", "Create")</button>
+    </div>
 </div>
