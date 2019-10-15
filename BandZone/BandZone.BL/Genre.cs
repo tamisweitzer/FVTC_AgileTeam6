@@ -23,15 +23,15 @@ namespace BandZone.BL
         {
             try
             {
-                using (BandZoneEntities dc = new BandZoneEntities())
+                using (BandZoneEntities bze = new BandZoneEntities())
                 {
                     tblGenre genre = new tblGenre();
-                    genre.GenreId = dc.tblGenre.Any() ? dc.tblGenre.Max(p => p.GenreId) + 1 : 1;
+                    genre.GenreId = bze.tblGenre.Any() ? bze.tblGenre.Max(p => p.GenreId) + 1 : 1;
                     genre.GenreType = this.GenreType;
                     this.GenreId = genre.GenreId;
 
-                    dc.tblGenre.Add(genre);
-                    dc.SaveChanges();
+                    bze.tblGenre.Add(genre);
+                    bze.SaveChanges();
 
                     return true;
                 }
@@ -47,16 +47,16 @@ namespace BandZone.BL
         {
             try
             {
-                using (BandZoneEntities dc = new BandZoneEntities())
+                using (BandZoneEntities bze = new BandZoneEntities())
                 {
                     if (GenreId >= 0)
                     {
-                        tblGenre genre = dc.tblGenre.Where(g => g.GenreId == GenreId).FirstOrDefault();
+                        tblGenre genre = bze.tblGenre.Where(g => g.GenreId == GenreId).FirstOrDefault();
                         if (genre != null)
                         {
                             genre.GenreType = this.GenreType;
 
-                            return dc.SaveChanges();
+                            return bze.SaveChanges();
                         }
                         else
                         {
@@ -80,11 +80,11 @@ namespace BandZone.BL
         {
             try
             {
-                using (BandZoneEntities dc = new BandZoneEntities())
+                using (BandZoneEntities bze = new BandZoneEntities())
                 {
                     if (GenreId >= 0)
                     {
-                        tblGenre genre = dc.tblGenre.Where(g => g.GenreId == GenreId).FirstOrDefault();
+                        tblGenre genre = bze.tblGenre.Where(g => g.GenreId == GenreId).FirstOrDefault();
                         if (genre != null)
                         {
                             this.GenreId = genre.GenreId;
@@ -112,16 +112,16 @@ namespace BandZone.BL
         {
             try
             {
-                using (BandZoneEntities dc = new BandZoneEntities())
+                using (BandZoneEntities bze = new BandZoneEntities())
                 {
                     if (GenreId >= 0)
                     {
-                        tblGenre genre = dc.tblGenre.Where(p => p.GenreId == GenreId).FirstOrDefault();
+                        tblGenre genre = bze.tblGenre.Where(p => p.GenreId == GenreId).FirstOrDefault();
                         if (genre != null)
                         {
-                            dc.tblGenre.Remove(genre);
+                            bze.tblGenre.Remove(genre);
 
-                            return dc.SaveChanges();
+                            return bze.SaveChanges();
                         }
                         else
                         {
@@ -157,9 +157,9 @@ namespace BandZone.BL
         {
             try
             {
-                BandZoneEntities dc = new BandZoneEntities();
+                BandZoneEntities bze = new BandZoneEntities();
 
-                foreach (tblGenre genre in dc.tblGenre)
+                foreach (tblGenre genre in bze.tblGenre)
                 {
                     // Make a Genre object 
                     Genre g = new Genre(genre.GenreId, genre.GenreType);
@@ -174,10 +174,10 @@ namespace BandZone.BL
 
         public void Load(int musicId)
         {
-            BandZoneEntities dc = new BandZoneEntities();
+            BandZoneEntities bze = new BandZoneEntities();
 
-            var genres = from mg in dc.tblMusicGenre
-                         join g in dc.tblGenre on mg.GenreId equals g.GenreId
+            var genres = from mg in bze.tblMusicGenre
+                         join g in bze.tblGenre on mg.GenreId equals g.GenreId
                          where mg.MusicianId == musicId
                          select new
                          {
