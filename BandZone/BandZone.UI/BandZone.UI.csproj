@@ -134,7 +134,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MusicianLoginController.cs" />
     <Compile Include="Controllers\MusicianController.cs" />
     <Compile Include="Controllers\SchedulesController.cs" />
     <Compile Include="Controllers\VenueController.cs" />
@@ -202,6 +202,9 @@
     <Content Include="Views\Venue\Delete.cshtml" />
     <Content Include="Views\Login\Logout.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\MusicianLogin\Login.cshtml" />
+    <Content Include="Views\MusicianLogin\Logout.cshtml" />
+    <Content Include="Views\MusicianLogin\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
