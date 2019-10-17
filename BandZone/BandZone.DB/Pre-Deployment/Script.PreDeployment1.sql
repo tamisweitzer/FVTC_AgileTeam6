@@ -9,6 +9,7 @@
                SELECT * FROM [$(TableName)]					
 --------------------------------------------------------------------------------------
 */
+/*DROP TABLE IF EXISTS [dbo].[tblSearchLog]*/
 DROP TABLE IF EXISTS [dbo].[tblGenre]
 DROP TABLE IF EXISTS [dbo].[tblMusician]
 DROP TABLE IF EXISTS [dbo].[tblMusicGenre]

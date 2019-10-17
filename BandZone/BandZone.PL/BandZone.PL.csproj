@@ -79,6 +79,9 @@
     <Compile Include="tblMusicianVenueEvent.cs">
       <DependentUpon>Bandzone.tt</DependentUpon>
     </Compile>
+    <Compile Include="tblSearch.cs">
+      <DependentUpon>Bandzone.tt</DependentUpon>
+    </Compile>
     <Compile Include="tblSong.cs">
       <DependentUpon>Bandzone.tt</DependentUpon>
     </Compile>

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1e9686a8f8b54933ae36a898ed1a5e3f" Name="Diagram1">
+      <Diagram DiagramId="1e9686a8f8b54933ae36a898ed1a5e3f" Name="Diagram1" ShowGrid="false">
         <EntityTypeShape EntityType="siebersdbModel.tblGenre" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="siebersdbModel.tblMusician" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="siebersdbModel.tblMusicianVenueEvent" Width="1.5" PointX="4.75" PointY="0.75" />
@@ -12,6 +12,7 @@
         <EntityTypeShape EntityType="siebersdbModel.tblSongGenre" Width="1.5" PointX="2.75" PointY="4.75" />
         <EntityTypeShape EntityType="siebersdbModel.tblVenue" Width="1.5" PointX="4.75" PointY="3.75" />
         <EntityTypeShape EntityType="siebersdbModel.tblMusicGenre" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="siebersdbModel.tblSearch" Width="1.5" PointX="7" PointY="3" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

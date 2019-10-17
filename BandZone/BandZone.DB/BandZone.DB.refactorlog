@@ -140,4 +140,25 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="BandMusicianName" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="0dc0aaac-2a98-4ae8-949a-56a25136e815" ChangeDateTime="10/17/2019 17:46:43">
+    <Property Name="ElementName" Value="[dbo].[tblSearchLog].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblSearchLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SearchId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="3a3fc278-d884-48d3-86fe-9de986d686fb" ChangeDateTime="10/17/2019 17:47:18">
+    <Property Name="ElementName" Value="[dbo].[tblSearchLog].[SearchLeve]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblSearchLog]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SearchLevel" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="83ad8887-53de-4d46-b089-7535480d1344" ChangeDateTime="10/17/2019 18:37:04">
+    <Property Name="ElementName" Value="[dbo].[tblSearch].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[tblSearch]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SearchId" />
+  </Operation>
 </Operations>

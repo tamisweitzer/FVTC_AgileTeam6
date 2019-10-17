@@ -44,6 +44,17 @@
           <Property Name="VenueId" Type="int" Nullable="false" />
           <Property Name="EventTime" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="tblSearch">
+          <Key>
+            <PropertyRef Name="SearchId" />
+          </Key>
+          <Property Name="SearchId" Type="int" Nullable="false" />
+          <Property Name="SearchDate" Type="datetime" />
+          <Property Name="SearchLevel" Type="varchar" MaxLength="200" />
+          <Property Name="SearchLogger" Type="varchar" MaxLength="200" />
+          <Property Name="SearchQuery" Type="varchar" MaxLength="2000" />
+          <Property Name="SearchTable" Type="varchar" MaxLength="2000" />
+        </EntityType>
         <EntityType Name="tblSong">
           <Key>
             <PropertyRef Name="SongId" />
@@ -80,6 +91,7 @@
           <EntitySet Name="tblMusicGenre" EntityType="Self.tblMusicGenre" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblMusician" EntityType="Self.tblMusician" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblMusicianVenueEvent" EntityType="Self.tblMusicianVenueEvent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblSearch" EntityType="Self.tblSearch" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblSong" EntityType="Self.tblSong" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblSongGenre" EntityType="Self.tblSongGenre" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tblVenue" EntityType="Self.tblVenue" Schema="dbo" store:Type="Tables" />
@@ -96,6 +108,7 @@
           <EntitySet Name="tblSongGenre" EntityType="siebersdbModel.tblSongGenre" />
           <EntitySet Name="tblVenue" EntityType="siebersdbModel.tblVenue" />
           <EntitySet Name="tblMusicGenre" EntityType="siebersdbModel.tblMusicGenre" />
+          <EntitySet Name="tblSearch" EntityType="siebersdbModel.tblSearch" />
         </EntityContainer>
         <EntityType Name="tblGenre">
           <Key>
@@ -166,6 +179,17 @@
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="MusicianId" Type="Int32" Nullable="false" />
           <Property Name="GenreId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblSearch">
+          <Key>
+            <PropertyRef Name="SearchId" />
+          </Key>
+          <Property Name="SearchId" Type="Int32" Nullable="false" />
+          <Property Name="SearchDate" Type="DateTime" Precision="3" />
+          <Property Name="SearchLevel" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SearchLogger" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="SearchQuery" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="SearchTable" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -247,6 +271,18 @@
                 <ScalarProperty Name="GenreId" ColumnName="GenreId" />
                 <ScalarProperty Name="MusicianId" ColumnName="MusicianId" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblSearch">
+            <EntityTypeMapping TypeName="siebersdbModel.tblSearch">
+              <MappingFragment StoreEntitySet="tblSearch">
+                <ScalarProperty Name="SearchTable" ColumnName="SearchTable" />
+                <ScalarProperty Name="SearchQuery" ColumnName="SearchQuery" />
+                <ScalarProperty Name="SearchLogger" ColumnName="SearchLogger" />
+                <ScalarProperty Name="SearchLevel" ColumnName="SearchLevel" />
+                <ScalarProperty Name="SearchDate" ColumnName="SearchDate" />
+                <ScalarProperty Name="SearchId" ColumnName="SearchId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
