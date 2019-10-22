@@ -20,7 +20,7 @@ namespace BandZone.UI.Controllers
         // Logout
         public ActionResult Logout()
         {
-            HttpContext.Session["user"] = null;
+            HttpContext.Session["musician"] = null;
             return View();
         }
 
