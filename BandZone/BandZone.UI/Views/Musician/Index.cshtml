@@ -20,7 +20,6 @@
             </th>*@
 
             <th>Name</th>
-            <th>Genre</th>
             <th>Website</th>
         </tr>
 
@@ -30,10 +29,6 @@
                 <td>
                     @Html.ActionLink(item.BandMusicianName, "Details", "Musician", new { Id = item.MusicianId }, null)
                  </td>
-                <td>
-                       Genre
-                    @* TODO load genre of each band *@
-                </td>
 
                 <td>
                     @Html.DisplayFor(modelItem => item.Website)
