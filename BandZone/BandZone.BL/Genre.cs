@@ -12,6 +12,10 @@ namespace BandZone.BL
         public int GenreId { get; set; }
         public string GenreType { get; set; }
 
+        public Genre()
+        {
+
+        }
 
         public Genre(int genreId, string genreType)
         {
@@ -172,13 +176,13 @@ namespace BandZone.BL
             }
         }
 
-        public void Load(int musicId)
+        public void LoadByMusicianId(int musicianId)
         {
-            BandZoneEntities bze = new BandZoneEntities();
+            BandZoneEntities dc = new BandZoneEntities();
 
-            var genres = from mg in bze.tblMusicGenre
-                         join g in bze.tblGenre on mg.GenreId equals g.GenreId
-                         where mg.MusicianId == musicId
+            var genres = from mg in dc.tblMusicGenre
+                         join g in dc.tblGenre on mg.GenreId equals g.GenreId
+                         where mg.MusicianId == musicianId
                          select new
                          {
                              g.GenreId,
@@ -187,9 +191,43 @@ namespace BandZone.BL
             foreach (var genre in genres)
             {
                 Genre g = new Genre(genre.GenreId, genre.GenreType);
-                Add(g);
+                this.Add(g);
             }
+        }      
+    }
+
+
+    public static class MusicGenre
+    {
+        public static void Delete(int musicianId, int genreId)
+        {
+            BandZoneEntities dc = new BandZoneEntities();
+
+            tblMusicGenre mg = dc.tblMusicGenre.FirstOrDefault(p => p.MusicianId == musicianId
+                                                                          && p.GenreId == genreId);
+
+            if (mg != null)
+            {
+                dc.tblMusicGenre.Remove(mg);
+                dc.SaveChanges();
+            }
+            dc = null;
+        }
+        public static void Add(int musicianId, int genreId)
+        {
+            BandZoneEntities dc = new BandZoneEntities();
+            tblMusicGenre mg = new tblMusicGenre();
+
+            mg.Id = dc.tblMusicGenre.Any() ? dc.tblMusicGenre.Max(p => p.Id) + 1 : 1;
+            mg.MusicianId = musicianId;
+            mg.GenreId = genreId;
+
+            dc.tblMusicGenre.Add(mg);
+            dc.SaveChanges();
+            dc = null;
         }
     }
+
+
 }
 

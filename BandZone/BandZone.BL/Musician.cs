@@ -25,9 +25,25 @@ namespace BandZone.BL
         public string Password { get; set; }
         public string Description { get; set; }
 
+        public string Genre { get; set; }
+        public GenreList Genres { get; set; }
+
         public Musician()
         {
+            Genres = new GenreList();
+        }
 
+        public void LoadGenres()
+        {
+            try
+            {
+                Genres = new GenreList();
+                Genres.LoadByMusicianId(this.MusicianId);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public Musician(string loginemail, string password)
@@ -201,7 +217,9 @@ namespace BandZone.BL
                             this.Website = musician.Website;
                             this.ProfileImage = musician.ProfileImage;
                             this.LoginEmail = musician.LoginEmail;
-                            this.Description = musician.Description;                            
+                            this.Description = musician.Description;
+
+                            LoadGenres();
 
                         }
                         else
