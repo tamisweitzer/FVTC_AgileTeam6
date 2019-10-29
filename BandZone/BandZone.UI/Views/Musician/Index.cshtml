@@ -19,21 +19,29 @@
                 @Html.DisplayNameFor(model => model.BandMusicianName)
             </th>*@
 
-            <th>Name</th>
+            <th><!-- image --></th>
+            <th>Musician Name</th>
             <th>Website</th>
+            
         </tr>
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.ActionLink(item.BandMusicianName, "Details", "Musician", new { Id = item.MusicianId }, null)
-                 </td>
-
-                <td>
-                    @Html.DisplayFor(modelItem => item.Website)
-                </td>
-            </tr>
+    <tr>
+        <td>
+             @*@Html.DisplayFor(modelItem => item.ProfileImage)*@ [image]
+        </td>
+        <td>
+            @Html.ActionLink(item.BandMusicianName, "Details", "Musician", new { Id = item.MusicianId }, null)
+        </td>
+        <td>
+            <!-- TODO website link -->
+            <!-- the full http:// protocol must be included in the link 
+                otherwise link will go to ~/url 
+            -->
+            <a href="http://@Html.DisplayFor(ModelItem => item.Website)">@Html.DisplayFor(ModelItem => item.Website)</a>
+        </td>
+    </tr>
         }
     </table>
 
