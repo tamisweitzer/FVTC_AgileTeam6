@@ -14,6 +14,12 @@ namespace BandZone.PL
     
     public partial class tblMusician
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tblMusician()
+        {
+            this.tblMusicGenre = new HashSet<tblMusicGenre>();
+        }
+    
         public int MusicianId { get; set; }
         public string BandMusicianName { get; set; }
         public Nullable<int> SongId { get; set; }
@@ -24,5 +30,8 @@ namespace BandZone.PL
         public string LoginEmail { get; set; }
         public string Password { get; set; }
         public string Description { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tblMusicGenre> tblMusicGenre { get; set; }
     }
 }

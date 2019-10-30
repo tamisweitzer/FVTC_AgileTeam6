@@ -17,5 +17,7 @@ namespace BandZone.PL
         public int Id { get; set; }
         public int MusicianId { get; set; }
         public int GenreId { get; set; }
+    
+        public virtual tblMusician tblMusician { get; set; }
     }
 }

@@ -1,0 +1,68 @@
+﻿@model BandZone.UI.ViewModels.MusicianVenueEventModel
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>MusicianVenueEvent</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MusicianVenueEvent.Id)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MusicianVenueEvent.MusicianId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.MusicianVenueEvent.MusicianId, new SelectList(Model.Musician, "MusicianId", "BandMusicianName", Model.MusicianVenueEvent), null, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MusicianVenueEvent.MusicianId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MusicianVenueEvent.VenueId, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.MusicianVenueEvent.VenueId, new SelectList(Model.Venue, "VenueId", "VenueName", Model.MusicianVenueEvent), null, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MusicianVenueEvent.VenueId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MusicianVenueEvent.EventTime, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MusicianVenueEvent.EventTime, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MusicianVenueEvent.EventTime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MusicianVenueEvent.EventHour, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MusicianVenueEvent.EventHour, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MusicianVenueEvent.EventHour, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

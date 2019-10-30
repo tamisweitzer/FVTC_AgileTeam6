@@ -18,5 +18,6 @@ namespace BandZone.PL
         public int MusicianId { get; set; }
         public int VenueId { get; set; }
         public string EventTime { get; set; }
+        public string EventHour { get; set; }
     }
 }

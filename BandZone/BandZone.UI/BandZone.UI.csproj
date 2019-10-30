@@ -136,6 +136,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MusicianLoginController.cs" />
     <Compile Include="Controllers\MusicianController.cs" />
+    <Compile Include="Controllers\MusicianVenueEventController.cs" />
     <Compile Include="Controllers\SchedulesController.cs" />
     <Compile Include="Controllers\VenueController.cs" />
     <Compile Include="Global.asax.cs">
@@ -144,6 +145,7 @@
     <Compile Include="Model\Authenticate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\MusicGenreModel.cs" />
+    <Compile Include="ViewModels\MusicianVenueEventModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -206,6 +208,10 @@
     <Content Include="Views\MusicianLogin\Login.cshtml" />
     <Content Include="Views\MusicianLogin\Logout.cshtml" />
     <Content Include="Views\MusicianLogin\Create.cshtml" />
+    <Content Include="Views\MusicianVenueEvent\Index.cshtml" />
+    <Content Include="Views\MusicianVenueEvent\Create.cshtml" />
+    <Content Include="Views\MusicianVenueEvent\Edit.cshtml" />
+    <Content Include="Views\MusicianVenueEvent\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
