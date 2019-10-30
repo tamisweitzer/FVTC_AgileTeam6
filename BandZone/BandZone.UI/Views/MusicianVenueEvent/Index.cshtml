@@ -13,13 +13,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.MusicianId)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.BandMusicianName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.VenueId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.VenueName)
@@ -36,13 +30,7 @@
 @foreach (var item in Model) {
 <tr>
     <td>
-        @Html.DisplayFor(modelItem => item.MusicianId)
-    </td>
-    <td>
         @Html.DisplayFor(modelItem => item.BandMusicianName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.VenueId)
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.VenueName)
