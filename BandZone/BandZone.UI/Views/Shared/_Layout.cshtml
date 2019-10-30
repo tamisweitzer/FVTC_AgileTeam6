@@ -28,37 +28,21 @@
 
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="nav navbar-nav">
-                <li class="nav-item">@Html.ActionLink("Home", "Index", "Home")</li>
+                @*<li class="nav-item">@Html.ActionLink("Home", "Index", "Home")</li>*@
                 <li>@Html.ActionLink("Musicians", "Index", "Musician")</li>
                 <li>@Html.ActionLink("Venues", "Index", "Venue")</li>
                 <li>@Html.ActionLink("Schedules", "Index", "Schedules")</li>
+            </ul>
 
-            </ul>
-            <!-- Login link in it's own ul element so it will float right -->
-            </ul>
-            <!-- Login link in it's own ul element so it will float right -->
             <ul class="nav navbar-nav navbar-right ml-2">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white lead"
-                       id="dropDownMenu"
-                       href="#"
-                       data-toggle="dropdown"
-                       aria-haspopup="true"
-                       aria-expanded="false">Login</a>
-                    <div class="dropdown-menu"
-                         aria-labelledby="dropDownMenu">
-                        <a class="dropdown-item lead" data-toggle="modal">@Html.ActionLink("Login as Musician", "Create", "MusicianLogin")</a>
-                        <a class="dropdown-item lead" data-toggle="modal">@Html.ActionLink("Login as Venue", "Login", "Venue")</a>
-                    </div>
-                </li>
-
-
+                <!--
+                    Login link goes to a dialog where user can either login as a Musician, a Venue
+                    or create a new account as a Musician or a Venue
+                -->
+                <li>@Html.ActionLink("Login", "Create", "MusicianLogin")</li>
+                <!-- TODO this needs a conditional so that only a logged in user can see the link -->
                 <li>@Html.ActionLink("Log Out", "Logout", "MusicianLogin")</li>
             </ul>
-
-
-
-
         </div>
     </nav>
 
