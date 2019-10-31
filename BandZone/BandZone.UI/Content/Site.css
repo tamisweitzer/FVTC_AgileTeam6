@@ -279,3 +279,18 @@ footer {
     .venue-delete-wrapper dt, .musician-delete-wrapper dd {
         margin-bottom: 1rem;
     }
+
+
+    /* Login Page */
+
+.login-index-wrapper {
+    /* Using the normal 3rem 2rem margin + additional 50px to clear the navbar */
+    margin: calc(3rem + 50px) 2rem 3rem 2rem;
+}
+
+.login-grouping {
+    margin: 4rem 1rem;
+}
+.login-grouping button {
+    margin: 0.5rem 0 1rem 0;
+}

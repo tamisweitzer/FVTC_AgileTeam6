@@ -1,0 +1,35 @@
+﻿
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@* TODO  -refactor raw html into html helper methods  *@
+
+    <div class="login-index-wrapper">
+        <h2>Login Page</h2>
+
+        <div class="login-grouping">
+            <h3>Musician Login</h3>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="password" class="form-control" />
+                <label>Password</label>
+                <input type="password" class="form-control"/>
+                <button class="btn btn-primary">Login</button>
+                <small class="d-block">Don't yet have an account? @Html.ActionLink("Register Here", "Login", "MusicianLogin")</small>
+            </div>
+        </div>
+
+        <div class="login-grouping">
+            <h3>Venue Login</h3>
+            <div class="form-group">
+                <label>Username</label>
+                <input type="password" class="form-control" />
+                <button class="btn btn-primary ">Login</button>
+                <small class="d-block">Don't yet have an account? <a href="">Register here</a></small>
+            </div>
+        </div>
+
+        </div>

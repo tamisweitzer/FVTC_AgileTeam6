@@ -9,8 +9,10 @@ namespace BandZone.UI.Controllers
     public class LoginController : Controller
     {
         // GET: Login
-        public ActionResult Index(string username, string password)
+        public ActionResult Index()
         {
+            // Goes to a login page where the use can choose to either
+            // login as a Musician or as a Venue
             return View();
         }
 

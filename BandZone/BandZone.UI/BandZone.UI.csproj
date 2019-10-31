@@ -220,6 +220,7 @@
     <Content Include="Views\MusicianVenueEvent\Create.cshtml" />
     <Content Include="Views\MusicianVenueEvent\Edit.cshtml" />
     <Content Include="Views\MusicianVenueEvent\Delete.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
