@@ -61,7 +61,6 @@
     <Compile Include="MusicianGenre.cs" />
     <Compile Include="MusicianVenueEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Searches.cs" />
     <Compile Include="Song.cs" />
     <Compile Include="SongGenre.cs" />
     <Compile Include="Venue.cs" />
@@ -70,10 +69,6 @@
     <ProjectReference Include="..\BandZone.PL\BandZone.PL.csproj">
       <Project>{c944769e-f80b-4c03-8c28-93c8befa7069}</Project>
       <Name>BandZone.PL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\BandZone.Reporting\BandZone.Reporting.csproj">
-      <Project>{05398f48-2900-457c-a322-3d994e1db459}</Project>
-      <Name>BandZone.Reporting</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

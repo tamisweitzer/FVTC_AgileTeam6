@@ -12,37 +12,48 @@
     </div>
 </div>
 
+
+
 <div class="musician-index-wrapper">
+
+    @using (Html.BeginForm())
+    {
+        <p>
+            Name: @Html.TextBox("searchString") <input type="submit" value="Search" />
+            
+        </p>
+    }
+
     <table class="table table-striped ">
         <tr>
             @*<th>
-                @Html.DisplayNameFor(model => model.BandMusicianName)
-            </th>*@
+                    @Html.DisplayNameFor(model => model.BandMusicianName)
+                </th>*@
 
             <th><!-- image --></th>
             <th>Musician Name</th>
             <th>Website</th>
-            
+
         </tr>
 
         @foreach (var item in Model)
         {
-    <tr>
-        <td>
-             @*@Html.DisplayFor(modelItem => item.ProfileImage)*@ [image]
-        </td>
-        <td>
-            @Html.ActionLink(item.BandMusicianName, "Details", "Musician", new { Id = item.MusicianId }, null)
-        </td>
-        <td>
-            <!-- TODO website link -->
-            <!-- the full http:// protocol must be included in the link 
-                otherwise link will go to ~/url 
-            -->
-            <a href="http://@Html.DisplayFor(ModelItem => item.Website)">@Html.DisplayFor(ModelItem => item.Website)</a>
-        </td>
-    </tr>
-            }
+            <tr>
+                <td>
+                    @*@Html.DisplayFor(modelItem => item.ProfileImage)*@ [image]
+                </td>
+                <td>
+                    @Html.ActionLink(item.BandMusicianName, "Details", "Musician", new { Id = item.MusicianId }, null)
+                </td>
+                <td>
+                    <!-- TODO website link -->
+                    <!-- the full http:// protocol must be included in the link
+                        otherwise link will go to ~/url
+                    -->
+                    <a href="http://@Html.DisplayFor(ModelItem => item.Website)">@Html.DisplayFor(ModelItem => item.Website)</a>
+                </td>
+            </tr>
+        }
     </table>
 
     <div class="musician-call-to-action">

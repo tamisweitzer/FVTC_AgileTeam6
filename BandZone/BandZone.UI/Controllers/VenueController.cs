@@ -12,10 +12,23 @@ namespace BandZone.UI.Controllers
         VenueList venues;
 
         // GET: Venue
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
             venues = new VenueList();
             venues.Load();
+
+            IEnumerable<Venue> filteredVenues;
+            filteredVenues = venues.Where(m => m.VenueName.ToLower().Contains(searchString.ToLower()));
+
+            if (searchString == null)
+            {
+                return View(venues);
+            }
+            else
+            {
+                return View(filteredVenues);
+            }
+
             return View(venues);
         }
 

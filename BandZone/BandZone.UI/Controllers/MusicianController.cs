@@ -15,18 +15,52 @@ namespace BandZone.UI.Controllers
     public class MusicianController : Controller
     {
         MusicianList musicians;
+        //MusicGenreModel mgm = new MusicGenreModel();
 
         // GET: Musician
-        public ActionResult Index(String id)
+        public ActionResult Index(string searchString, string musicGenre, string sortOrder)
         {
-            string searchString = id;
             musicians = new MusicianList();
             musicians.Load();
+            //mgm.Genres.Load();
+
+            //mgm.Genres.AddRange(mgm.Genres.Distinct());
+            //ViewBag.musicGenre = new SelectList(mgm.Genres);
 
             IEnumerable<Musician> filteredMusicians;
             filteredMusicians = musicians.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower()));
 
-            return View(musicians);
+            /*ViewBag.NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            System.Collections.Generic.List<Musician> sortedMusicians;
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    sortedMusicians = filteredMusicians.OrderByDescending(p => p.BandMusicianName).ToList();
+                    break;
+                default:
+                    sortedMusicians = filteredMusicians.OrderBy(p => p.BandMusicianName).ToList();
+                    break;
+            }*/
+
+            if (searchString == null)
+            {
+                return View(musicians);
+            }
+            else
+            {
+                return View(filteredMusicians);
+            }
+            
+            /*if (!String.IsNullOrEmpty(searchString))
+            {
+                filteredMusicians = musicians.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower()));
+            }
+
+            if (!String.IsNullOrEmpty(musicGenre))
+            {
+                filteredMusicians = musicians.Where(x => x.Genre == musicGenre);
+            }*/
         }
 
         // GET: Musician/Details/5
