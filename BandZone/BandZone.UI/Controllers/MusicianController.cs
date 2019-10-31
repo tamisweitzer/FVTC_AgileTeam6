@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BandZone.BL;
 using BandZone.UI.Model;
 using BandZone.UI.ViewModels;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace BandZone.UI.Controllers
 {
@@ -14,10 +17,14 @@ namespace BandZone.UI.Controllers
         MusicianList musicians;
 
         // GET: Musician
-        public ActionResult Index()
+        public ActionResult Index(String id)
         {
+            string searchString = id;
             musicians = new MusicianList();
             musicians.Load();
+
+            IEnumerable<Musician> filteredMusicians;
+            filteredMusicians = musicians.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower()));
 
             return View(musicians);
         }
