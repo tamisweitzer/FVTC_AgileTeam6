@@ -5,7 +5,7 @@ using System.Web;
 
 namespace BandZone.UI.Model
 {
-    public class Authenticate
+    public class MusicianAuthenticate
     {
         public static bool IsAuthenticated()
         {

@@ -14,34 +14,35 @@ namespace BandZone.UI.Controllers
 {
     public class MusicianController : Controller
     {
+
         MusicianList musicians;
         //MusicGenreModel mgm = new MusicGenreModel();
 
         // GET: Musician
         public ActionResult Index(string searchString, string musicGenre, string sortOrder)
         {
+            int id;
+            MusicGenreModel mgm = new MusicGenreModel();
             musicians = new MusicianList();
             musicians.Load();
+
+            //mgm.Musician = new Musician();
+            //mgm.Musician.MusicianId = id;
+            //mgm.Musician.LoadById();
+
+            //// load all genres
+            //mgm.Genres = new GenreList();
             //mgm.Genres.Load();
 
-            //mgm.Genres.AddRange(mgm.Genres.Distinct());
-            //ViewBag.musicGenre = new SelectList(mgm.Genres);
+            ////deal wtith the existing genres 
+            //IEnumerable<int> existingGenresIds = new List<int>();
+
+            ////select only the Ids
+            //existingGenresIds = mgm.Musician.Genres.Select(a => a.GenreId);
+            //mgm.GenreIds = existingGenresIds;
 
             IEnumerable<Musician> filteredMusicians;
             filteredMusicians = musicians.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower()));
-
-            /*ViewBag.NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            System.Collections.Generic.List<Musician> sortedMusicians;
-
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    sortedMusicians = filteredMusicians.OrderByDescending(p => p.BandMusicianName).ToList();
-                    break;
-                default:
-                    sortedMusicians = filteredMusicians.OrderBy(p => p.BandMusicianName).ToList();
-                    break;
-            }*/
 
             if (searchString == null)
             {
@@ -51,25 +52,24 @@ namespace BandZone.UI.Controllers
             {
                 return View(filteredMusicians);
             }
-            
-            /*if (!String.IsNullOrEmpty(searchString))
-            {
-                filteredMusicians = musicians.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower()));
-            }
-
-            if (!String.IsNullOrEmpty(musicGenre))
-            {
-                filteredMusicians = musicians.Where(x => x.Genre == musicGenre);
-            }*/
         }
 
         // GET: Musician/Details/5
         public ActionResult Details(int id)
         {
-            Musician musician = new Musician();
-            musician.MusicianId = id;
-            musician.LoadById();
-            return View(musician);
+            //if (MusicianAuthenticate.IsAuthenticated())
+            //{
+                Musician musician = new Musician();
+                musician.MusicianId = id;
+                musician.LoadById();
+                return View(musician);
+            //}
+            //else
+            //{
+              //  return RedirectToAction("Create", "MusicianLogin");
+            //}
+
+            
         }
 
         // GET: Musician/Create
@@ -113,7 +113,7 @@ namespace BandZone.UI.Controllers
         {
             MusicGenreModel mgm = new MusicGenreModel();
 
-            if (Authenticate.IsAuthenticated())
+            if (MusicianAuthenticate.IsAuthenticated())
             {
                 mgm.Musician = new Musician();
                 mgm.Musician.MusicianId = id;
