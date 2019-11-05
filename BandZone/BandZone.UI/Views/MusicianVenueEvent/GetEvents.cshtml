@@ -1,0 +1,28 @@
+﻿@model IEnumerable<BandZone.BL.MusicianVenueEvent>
+
+@{
+    ViewBag.Title = "GetEvents";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetEvents</h2>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //Call EmpDetails jsonResult Method
+        $.getJSON("/MusicianVenueEvent/GetEvents",
+            function (json) {
+                var tr;
+                //Append each row to html table
+                for (var i = 0; i < json.length; i++) {
+                    tr = $('<tr/>');
+                    tr.append("<td>" + json[i].Id + "</td>");
+                    tr.append("<td>" + json[i].MusicianId + "</td>");
+                    tr.append("<td>" + json[i].VenueId + "</td>");
+                    tr.append("<td>" + json[i].EventTime + "</td>");
+                    //$('table').append(tr);
+                }
+            });
+    });
+</script>

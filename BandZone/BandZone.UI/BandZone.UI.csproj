@@ -221,6 +221,7 @@
     <Content Include="Views\MusicianVenueEvent\Edit.cshtml" />
     <Content Include="Views\MusicianVenueEvent\Delete.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\MusicianVenueEvent\GetEvents.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -244,6 +245,10 @@
     <ProjectReference Include="..\BandZone.BL\BandZone.BL.csproj">
       <Project>{74408f9f-ad15-40a5-bc15-9669999c453c}</Project>
       <Name>BandZone.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BandZone.PL\BandZone.PL.csproj">
+      <Project>{C944769E-F80B-4C03-8C28-93C8BEFA7069}</Project>
+      <Name>BandZone.PL</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

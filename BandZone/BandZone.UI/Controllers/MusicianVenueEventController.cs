@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BandZone.BL;
+using BandZone.PL;
 using BandZone.UI.ViewModels;
 
 namespace BandZone.UI.Controllers
@@ -19,6 +20,17 @@ namespace BandZone.UI.Controllers
             musicianVenueEvents.Load();
 
             return View(musicianVenueEvents);
+        }
+
+
+        public JsonResult GetEvents()
+        {
+            musicianVenueEvents = new MusicianVenueEventList();
+            musicianVenueEvents.Load();
+
+            var events = musicianVenueEvents.ToList();
+            return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            
         }
 
         // GET: Musician/Details/5

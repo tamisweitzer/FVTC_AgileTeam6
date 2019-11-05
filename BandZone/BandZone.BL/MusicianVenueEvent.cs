@@ -18,6 +18,8 @@ namespace BandZone.BL
         [DisplayName("Venue ID")]
         public int VenueId { get; set; }
         public string VenueName { get; set; }
+        public string Address { get; set; }
+        public string City { get; set; }
         [DisplayName("Time / Date of Event")]
         [DataType(DataType.Date)]
         //public DateTime? EventDateTime { get; set; }
@@ -202,7 +204,9 @@ namespace BandZone.BL
                                        mve.EventTime,
                                        mve.EventHour,
                                        m.BandMusicianName,
-                                       v.VenueName
+                                       v.VenueName,
+                                       v.Address,
+                                       v.City
                                    }).ToList();
 
                     foreach (var p in results)
@@ -219,9 +223,11 @@ namespace BandZone.BL
                         musicianVenueEvent.EventHour = p.EventHour;
                         musicianVenueEvent.BandMusicianName = p.BandMusicianName;
                         musicianVenueEvent.VenueName = p.VenueName;
+                        musicianVenueEvent.Address = p.Address;
+                        musicianVenueEvent.City = p.City;
 
-                        // Add it to the ProgDecList (myself)
-                        Add(musicianVenueEvent);
+                    // Add it to the ProgDecList (myself)
+                    Add(musicianVenueEvent);
 
                     }
                 }
