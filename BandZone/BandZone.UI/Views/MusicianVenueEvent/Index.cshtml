@@ -5,7 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<!-- Header - set the background image for the header in the line below -->
+<div class="banner_list">
+    <div class="bg-image-full" style="background-image: url('../../images/calendar_dark.jpg');">
+        <h1 class="centered display-2 font-weight-bold text-white">Schedule</h1>
+    </div>
+</div>
+
+<br />
+<br />
+
 <div id="calender"></div>
 
 <div id="myModal" class="modal fade" role="dialog">
@@ -78,7 +87,7 @@
                         var $description = $('<div/>');
                         $description.append($('<p/>').html('<b>Day: </b>' + calEvent.start.format("MM-DD-YYYY")));
                         $description.append($('<p/>').html('<b>Time: </b>' + calEvent.eventHour));
-                        $description.append($('<p/>').html('<b>Venue Name: </b>' + calEvent.venue));   
+                        $description.append($('<p/>').html('<b>Venue Name: </b>' + calEvent.venue));
                         $description.append($('<p/>').html('<b>Address: </b>' + calEvent.address));
                         $description.append($('<p/>').html('<b>City: </b>' + calEvent.city));
                         $('#myModal #pDetails').empty().html($description);
@@ -89,4 +98,4 @@
             }
         })
     </script>
-    }
+}
