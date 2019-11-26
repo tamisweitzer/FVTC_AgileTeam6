@@ -4,6 +4,20 @@
 }
 
 
+/* 
+    Colors
+ 
+*/
+:root {
+    --bz-primary-color: #b2943e;
+    --bz-reddish-brown: #6c3323;
+    --bz-beer: #8a5601;
+    --bz-beer2: #b29a6c;
+    --bz-browns1: #875d1e;
+    --bz-browns2: #7a501f;
+}
+
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -28,6 +42,18 @@ textarea {
 #navigation {
     border: none;
 }
+
+
+
+/* Navbar brand area in navigation */
+/* Using an id instead of a class because overriding BS styles is hard. */
+#navbar-branding {
+    font-size: 3rem;
+    color: var(--bz-beer);
+    
+}
+    
+
 
 
 /* carousel fullscreen */
@@ -91,9 +117,17 @@ h4 {
     margin-right: 10%;
 }
 
-.icons {
-    color: gray;
+.card-icon {
+    color: var(--bz-beer);
 }
+
+.card-body {
+    color: var(--bz-beer2);
+}
+.card-links {
+    color: var(--bz-beer);
+}
+
 
 
 .bg-image-full {
