@@ -171,6 +171,9 @@
     <Content Include="images\bar_banner.jpg" />
     <Content Include="images\calendar_dark.jpg" />
     <Content Include="images\guitar.jpg" />
+    <Content Include="images\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\BandZone - Web Deploy.pubxml" />
