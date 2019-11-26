@@ -9,9 +9,10 @@
             <li>
                 <!--TODO the 'Details/'  is currently hardcoded to 9 for testing. 
                 -->
-                @Html.ActionLink("Hello " + User.Identity.Name  + "!", "Details/9", "Musician", routeValues: null, htmlAttributes: new { title = "Manage Profile" })
+                @Html.ActionLink("Hello "  + "!", "Details/9", "Musician", routeValues: null, htmlAttributes: new { title = "Manage Profile" })
             </li>
-            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            @*<li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>*@
+
         </ul>
     }
 }
