@@ -21,25 +21,11 @@ namespace BandZone.UI.Controllers
         // GET: Musician
         public ActionResult Index(string searchString, string musicGenre, string sortOrder)
         {
-            int id;
             MusicGenreModel mgm = new MusicGenreModel();
             musicians = new MusicianList();
             musicians.Load();
 
-            //mgm.Musician = new Musician();
-            //mgm.Musician.MusicianId = id;
-            //mgm.Musician.LoadById();
-
-            //// load all genres
-            //mgm.Genres = new GenreList();
             //mgm.Genres.Load();
-
-            ////deal wtith the existing genres 
-            //IEnumerable<int> existingGenresIds = new List<int>();
-
-            ////select only the Ids
-            //existingGenresIds = mgm.Musician.Genres.Select(a => a.GenreId);
-            //mgm.GenreIds = existingGenresIds;
 
             IEnumerable<Musician> filteredMusicians;
             filteredMusicians = musicians.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower()));

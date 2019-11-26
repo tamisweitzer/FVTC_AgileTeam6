@@ -23,7 +23,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            @Html.ActionLink("Band Zone", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <a href='@Url.Action("Index", "Home")'>
+                <img src='@Url.Content("~/images/logo.png")' />
+            </a>
+            
         </div>
 
         <div class="collapse navbar-collapse" id="navigation">
