@@ -5,17 +5,12 @@
 
 
 /* 
-    Colors
+    Site Colors - split complementary scheme
+    b87e17 - light muted brown
+    17a2b8 - deep aqua / Band Zone blue
+    b81751 - cool muted blue/red
  
 */
-:root {
-    --bz-primary-color: #b2943e;
-    --bz-reddish-brown: #6c3323;
-    --bz-beer: #8a5601;
-    --bz-beer2: #b29a6c;
-    --bz-browns1: #875d1e;
-    --bz-browns2: #7a501f;
-}
 
 
 
@@ -117,14 +112,14 @@ h4 {
 }
 
 .card-icon {
-    color: var(--bz-beer);
+    color: #17a2b8;
 }
 
 .card-body {
-    color: var(--bz-beer2);
+    color: #666;
 }
 .card-links {
-    color: var(--bz-beer);
+    color: #b81751;
 }
 
 
