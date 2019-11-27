@@ -11,6 +11,12 @@
     b81751 - cool muted blue/red
  
 */
+:root {
+    --bz-brown: #b87e17;
+    --bz-aqua: #17a2b8;
+    --bz-wine: #b81751;
+    
+}
 
 
 
@@ -31,7 +37,7 @@ textarea {
 
 .navbar {
     height: 50px;
-}
+}http://localhost:54360/?Length=18
 
 #navigation {
     border: none;
@@ -42,11 +48,11 @@ textarea {
 /* Navbar brand area in navigation */
 /* Using an id instead of a class because overriding BS styles is hard. */
 #navbar-branding {
-    font-size: 3rem;
-    color: var(--bz-beer);
-        
+    font-size: 3rem;        
 }
-    
+.nav-text-override {
+    color: var(--bz-wine) !important;
+}
 
 
 
@@ -110,16 +116,17 @@ h4 {
     margin-left: 4%;
     margin-right: 10%;
 }
-
 .card-icon {
-    color: #17a2b8;
+    color: var(--bz-aqua);
 }
-
-.card-body {
+.card-title {
+    color: var(--bz-wine);
+}
+.card-body-text {
     color: #666;
 }
 .card-links {
-    color: #b81751;
+    color: var(--bz-wine);
 }
 
 
