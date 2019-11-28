@@ -28,8 +28,6 @@ namespace BandZone.UI.Controllers
             {
                 return View(filteredVenues);
             }
-
-            return View(venues);
         }
 
         // GET: Venue/Details/5
