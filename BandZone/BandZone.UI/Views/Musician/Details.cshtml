@@ -1,4 +1,4 @@
-﻿@model BandZone.BL.Musician
+﻿@model BandZone.UI.ViewModels.MusicGenreModel
 
 @{
     ViewBag.Title = "Details";
@@ -15,77 +15,71 @@
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.BandMusicianName)
+                @Html.DisplayFor(model => model.Musician.BandMusicianName)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.SongId)
+                @Html.DisplayNameFor(model => model.Musician.Phone)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.SongId)
+                @Html.DisplayFor(model => model.Musician.Phone)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.Phone)
+                @Html.DisplayNameFor(model => model.Musician.ContactEmail)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Phone)
+                @Html.DisplayFor(model => model.Musician.ContactEmail)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.ContactEmail)
+                @Html.DisplayNameFor(model => model.Musician.Website)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.ContactEmail)
+                @Html.DisplayFor(model => model.Musician.Website)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.Website)
+                @Html.DisplayNameFor(model => model.Musician.ProfileImage)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.Website)
+                @Html.DisplayFor(model => model.Musician.ProfileImage)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.ProfileImage)
+                @Html.DisplayNameFor(model => model.Musician.LoginEmail)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.ProfileImage)
+                @Html.DisplayFor(model => model.Musician.LoginEmail)
             </dd>
 
             <dt>
-                @Html.DisplayNameFor(model => model.LoginEmail)
+                @Html.DisplayNameFor(model => model.Musician.Description)
             </dt>
 
             <dd>
-                @Html.DisplayFor(model => model.LoginEmail)
+                @Html.DisplayFor(model => model.Musician.Description)
             </dd>
-
             <dt>
-                @Html.DisplayNameFor(model => model.Password)
+                @Html.DisplayNameFor(model => model.Genres)
             </dt>
-
             <dd>
-                @Html.DisplayFor(model => model.Password)
+                <ul>
+                    @foreach (var item in Model.Musician.Genres)
+                    {
+                        <li>@item.GenreType</li>
+                    }
+                </ul>
             </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.Description)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.Description)
-            </dd>
-
         </dl>
 
         <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.MusicianId }) |
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Musician.MusicianId }) |
             @Html.ActionLink("Back to List", "Index")
         </p>
 
