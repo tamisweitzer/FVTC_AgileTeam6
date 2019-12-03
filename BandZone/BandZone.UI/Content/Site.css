@@ -4,18 +4,11 @@
 }
 
 
-/* 
-    Site Colors - split complementary scheme
-    b87e17 - light muted brown
-    17a2b8 - deep aqua / Band Zone blue
-    b81751 - cool muted blue/red
- 
-*/
 :root {
-    --bz-brown: #b87e17;
-    --bz-aqua: #17a2b8;
-    --bz-wine: #b81751;
-    --bz-lighter-wine: #d3648c;
+    --bz-brown: #b87e17; /* Neutral contrast color to the aqua and wine colors */
+    --bz-aqua: #17a2b8; /* Aqua blue from font in Band Zone font */
+    --bz-wine: #b81751; /* Complementary color to the aqua blue*/
+    --bz-lighter-wine: #d3648c; /* Used in navigation text*/
 }
 
 
@@ -328,4 +321,9 @@ footer {
 }
 .login-grouping button {
     margin: 0.5rem 0 1rem 0;
+}
+
+/* MusicianLogin Views */
+.musician-login-wrapper {
+    margin: calc(50px + 3rem);
 }
