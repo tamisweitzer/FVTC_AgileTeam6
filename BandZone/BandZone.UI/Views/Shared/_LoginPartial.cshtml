@@ -9,12 +9,11 @@
             <li>
                 <!--TODO the 'Details/'  is currently hardcoded to 9 for testing. 
                 -->
-                @Html.ActionLink("Welcome Back!", "Details/9", "Musician", routeValues: null, htmlAttributes: new { title = "Manage Profile", @class="nav-text-override" })
+                @Html.ActionLink("Welcome Back!", "Index", "Musician", routeValues: null, htmlAttributes: new { title = "Manage Profile", @class="nav-text-override" })
             </li>
             <li>
-                @Html.ActionLink("Log off", "Logout", "MusicianLogin", null, htmlAttributes: new { @class = "nav-text-override" });
+                @Html.ActionLink("Log off", "Logout", "MusicianLogin", routeValues: null, htmlAttributes: new { @class = "nav-text-override" });
             </li>
-            @*<li><a href="javascript:document.getElementById('logoutForm').submit()" class="nav-text-override">Log off</a></li>*@
 
         </ul>
     }
