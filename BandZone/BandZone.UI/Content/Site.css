@@ -201,7 +201,7 @@ footer {
 }
 
     .musician-call-to-action h3 {
-        color: #17a2b8;
+        color: var(--bz-wine);
     }
 
     .musician-call-to-action button {
@@ -213,6 +213,9 @@ footer {
         color: #fff;
     }
 
+    button {
+        background-color: var(--bz-aqua);
+    }
 .musician-create-wrapper {
     margin: calc(50px + 3rem);
 }
@@ -264,7 +267,7 @@ footer {
 }
 
     .venue-call-to-action h3 {
-        color: #17a2b8;
+        color: var(--bz-wine);
     }
 
     .venue-call-to-action button {
@@ -274,6 +277,10 @@ footer {
 
     .venue-call-to-action a {
         color: #fff;
+    }
+
+    button {
+        background-color: var(--bz-aqua);
     }
 
 .venue-create-wrapper {
