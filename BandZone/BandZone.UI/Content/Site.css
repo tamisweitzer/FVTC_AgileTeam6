@@ -211,14 +211,15 @@ footer {
     .musician-call-to-action button {
         margin: 2rem;
         padding: 1rem 3rem;
+        background-color: var(--bz-aqua);
     }
 
     .musician-call-to-action a {
         color: #fff;
     }
 
-    button {
-        background-color: var(--bz-aqua);
+    .musician-call-to-action button {
+        
     }
 .musician-create-wrapper {
     margin: calc(50px + 3rem);
@@ -229,6 +230,10 @@ footer {
 .musician-edit-wrapper {
     margin: calc(50px + 3rem);
     min-height: calc(100vh - 198px);
+}
+.musician-edit-wrapper input.btn {
+    background-color: var(--bz-aqua);
+    color: #fff;
 }
 
 
@@ -255,6 +260,11 @@ footer {
 
 .musician-delete-wrapper dt, .musician-delete-wrapper dd {
     margin-bottom: 1rem;
+}
+
+.musician-delete-wrapper input.btn {
+    background-color: var(--bz-wine);
+    color: #fff;
 }
 
 
@@ -303,6 +313,10 @@ footer {
 .venue-edit-wrapper {
     margin: calc(50px + 3rem);
     min-height: calc(100vh - 198px);
+}
+.venue-edit-wrapper input.btn {
+    background-color: var(--bz-aqua);
+    color: #fff;
 }
 
 .venue-details-wrapper {
