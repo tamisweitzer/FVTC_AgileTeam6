@@ -42,28 +42,38 @@ namespace BandZone.UI.Controllers
 
         //Added 12/02 - Brings the Genre info (model)
         // GET: Musician/Details/5
+   
         public ActionResult Details(int id)
         {
-            MusicGenreModel mgm = new MusicGenreModel();
+            if (MusicianAuthenticate.IsAuthenticated())
+            {
 
-            mgm.Musician = new Musician();
-            mgm.Musician.MusicianId = id;
-            mgm.Musician.LoadById();
+                MusicGenreModel mgm = new MusicGenreModel();
 
-            // load all genres
-            mgm.Genres = new GenreList();
-            mgm.Genres.Load();
+                mgm.Musician = new Musician();
+                mgm.Musician.MusicianId = id;
+                mgm.Musician.LoadById();
 
-            //deal wtith the existing genres 
-            IEnumerable<int> existingGenresIds = new List<int>();
+                // load all genres
+                mgm.Genres = new GenreList();
+                mgm.Genres.Load();
 
-            //select only the Ids
-            existingGenresIds = mgm.Musician.Genres.Select(a => a.GenreId);
-            mgm.GenreIds = existingGenresIds;
+                //deal wtith the existing genres 
+                IEnumerable<int> existingGenresIds = new List<int>();
 
-            Session["genreids"] = existingGenresIds;
+                //select only the Ids
+                existingGenresIds = mgm.Musician.Genres.Select(a => a.GenreId);
+                mgm.GenreIds = existingGenresIds;
 
-            return View(mgm);
+                Session["genreids"] = existingGenresIds;
+
+                return View(mgm);
+            }
+            else
+            {
+                return RedirectToAction("Create", "MusicianLogin", "Index");
+            }
+            
         }
 
         // GET: Musician/Details/5
