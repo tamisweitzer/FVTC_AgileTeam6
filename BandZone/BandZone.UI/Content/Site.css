@@ -15,7 +15,7 @@
     --bz-brown: #b87e17;
     --bz-aqua: #17a2b8;
     --bz-wine: #b81751;
-    
+    --bz-lighter-wine: #d3648c;
 }
 
 
@@ -51,7 +51,7 @@ textarea {
     font-size: 3rem;        
 }
 .nav-text-override {
-    color: var(--bz-wine) !important;
+    color: var(--bz-lighter-wine) !important;
 }
 
 
