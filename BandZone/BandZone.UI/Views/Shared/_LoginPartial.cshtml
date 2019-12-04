@@ -7,14 +7,11 @@
 
         <ul class="nav navbar-nav navbar-right mr-3">
             <li>
-                <!--TODO the 'Details/'  is currently hardcoded to 9 for testing. 
-                -->
                 @Html.ActionLink("Welcome Back!", "Index", "Musician", routeValues: null, htmlAttributes: new { title = "Manage Profile", @class="nav-text-override" })
             </li>
             <li>
                 @Html.ActionLink("Log off", "Logout", "MusicianLogin", routeValues: null, htmlAttributes: new { @class = "nav-text-override" });
             </li>
-
         </ul>
     }
 }
