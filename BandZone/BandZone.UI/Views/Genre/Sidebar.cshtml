@@ -1,0 +1,10 @@
+﻿@model IEnumerable<BandZone.BL.Genre>
+
+
+@foreach (var item in Model)
+{
+    <div class="sidebyside btn btn-large btn-light">
+        @Html.ActionLink(item.GenreType, "Load", "Musician", new { id = item.GenreId }, null)
+    </div>
+}
+

@@ -279,6 +279,23 @@ footer {
     color: #fff;
 }
 
+/*Search Box on the Musician Page*/
+.search-box {
+    margin-left: 2rem;
+}
+
+/* On the musician page, this is the genre list search*/
+div.sidebyside {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.buttons-genre {
+    margin-bottom: 3rem;
+    margin-left: 2rem;
+}
+
+
 
 
 /* Venue Pages */

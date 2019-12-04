@@ -16,12 +16,19 @@
 
 <div class="musician-index-wrapper">
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Index", "Musician"))
     {
-    <p>
-        Name: @Html.TextBox("searchString") <input type="submit" value="Search" />
-    </p>
+        @Html.Hidden("input_genre", (object)ViewBag.GenreId)
+        <p class="search-box">
+            Name: @Html.TextBox("searchString") <input type="submit" value="Search" />
+        </p>
     }
+
+    <!-- List of Genres -->
+    <div class="buttons-genre">
+        <div class="sidebyside btn btn-large btn-light">@Html.ActionLink("Show All", "Index", "Musician")</div>
+        <div class="sidebyside">@{ Html.RenderAction("Sidebar", "Genre"); }</div>
+    </div>
 
     <table class="table table-striped ">
         <tr>

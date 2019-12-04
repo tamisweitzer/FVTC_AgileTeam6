@@ -19,30 +19,47 @@ namespace BandZone.UI.Controllers
         //MusicGenreModel mgm = new MusicGenreModel();
 
         // GET: Musician
-        public ActionResult Index(string searchString, string musicGenre, string sortOrder)
+        public ActionResult Index(string searchString, string musicGenre, string sortOrder, int? input_genre)
         {
             MusicGenreModel mgm = new MusicGenreModel();
             musicians = new MusicianList();
-            musicians.Load();
-
-            //mgm.Genres.Load();
-
-            IEnumerable<Musician> filteredMusicians;
-            filteredMusicians = musicians.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower()));
 
             if (searchString == null)
             {
+                musicians.LoadMusician();
                 return View(musicians);
             }
             else
             {
-                return View(filteredMusicians);
+                IEnumerable<Musician> filteredMusicians;
+                if (input_genre.HasValue)
+                {
+                    MusicianList musician = new MusicianList();
+                    musician.Load(input_genre.Value);
+                    ViewBag.GenreId = input_genre.Value;
+                    filteredMusicians = musician.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower())).Distinct();
+                    return View("Index", filteredMusicians);
+                }
+                else
+                {
+                    musicians.LoadMusician();
+                    filteredMusicians = musicians.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower()));
+                    return View(filteredMusicians);
+                }
             }
         }
 
+        public ActionResult Load(int id)
+        {
+            MusicianList musician = new MusicianList();
+            musician.Load(id);
+            ViewBag.GenreId = id;
+            return View("Index", musician);
+        }
+
+
         //Added 12/02 - Brings the Genre info (model)
         // GET: Musician/Details/5
-   
         public ActionResult Details(int id)
         {
             if (MusicianAuthenticate.IsAuthenticated())
