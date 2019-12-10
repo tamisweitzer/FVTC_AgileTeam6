@@ -98,8 +98,8 @@ namespace BandZone.UI.Controllers
         // GET: Musician/Details/5
         public ActionResult Details(int id)
         {
-            if (MusicianAuthenticate.IsAuthenticated())
-            {
+            //if (MusicianAuthenticate.IsAuthenticated())
+            //{
 
                 MusicGenreModel mgm = new MusicGenreModel();
 
@@ -121,11 +121,11 @@ namespace BandZone.UI.Controllers
                 Session["genreids"] = existingGenresIds;
 
                 return View(mgm);
-            }
-            else
-            {
-                return RedirectToAction("Create", "MusicianLogin", "Index");
-            }
+            //}
+            //else
+            //{
+            //    return RedirectToAction("Create", "MusicianLogin", "Index");
+            //}
             
         }
 
