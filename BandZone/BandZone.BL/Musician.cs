@@ -331,6 +331,11 @@ namespace BandZone.BL
     {
         public void Load()
         {
+            Load(null);
+        }
+
+        public void LoadMusician()
+        {
             try
             {
                 using (BandZoneEntities dc = new BandZoneEntities())
@@ -351,6 +356,58 @@ namespace BandZone.BL
                         };
 
                         this.Add(musician);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public void Load(int? genreId)
+        {
+            try
+            {
+                using (BandZoneEntities dc = new BandZoneEntities())
+                {
+                    var results = (from m in dc.tblMusician
+                                   join mg in dc.tblMusicGenre on m.MusicianId equals mg.MusicianId
+                                   join g in dc.tblGenre on mg.GenreId equals g.GenreId
+                                   where (mg.GenreId == genreId || genreId == null)
+                                   orderby m.BandMusicianName
+                                   select new
+                                   {
+                                       m.MusicianId,
+                                       m.BandMusicianName,
+                                       m.SongId,
+                                       m.Phone,
+                                       m.ContactEmail,
+                                       m.Website,
+                                       m.LoginEmail,
+                                       m.Password,
+                                       Genre = g.GenreType,
+                                       GenreId = g.GenreId
+                                   }).ToList();
+
+                    foreach (var m in results)
+                    {
+                        Musician musician = new Musician();
+
+                        musician.MusicianId = m.MusicianId;
+                        musician.BandMusicianName = m.BandMusicianName;
+                        musician.SongId = Convert.ToInt32(m.SongId);
+                        musician.Phone = m.Phone;
+                        musician.ContactEmail = m.ContactEmail;
+                        musician.Website = m.Website;
+                        musician.LoginEmail = m.LoginEmail;
+                        musician.Password = m.Password;
+                        musician.Genre = m.Genre;
+
+                        if (this.Where(music => music.MusicianId == musician.MusicianId).Count() == 0)
+                        {
+                            Add(musician);
+                        }
                     }
                 }
             }

@@ -4,6 +4,14 @@
 }
 
 
+:root {
+    --bz-brown: #b87e17; /* Neutral contrast color to the aqua and wine colors */
+    --bz-aqua: #17a2b8; /* Aqua blue from font in Band Zone font */
+    --bz-wine: #b81751; /* Complementary color to the aqua blue*/
+    --bz-lighter-wine: #d3648c; /* Used in navigation text*/
+}
+
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -22,12 +30,23 @@ textarea {
 
 .navbar {
     height: 50px;
-}
-
+}http://localhost:54360/?Length=18
 
 #navigation {
     border: none;
 }
+
+
+
+/* Navbar brand area in navigation */
+/* Using an id instead of a class because overriding BS styles is hard. */
+#navbar-branding {
+    font-size: 3rem;        
+}
+.nav-text-override {
+    color: var(--bz-lighter-wine) !important;
+}
+
 
 
 /* carousel fullscreen */
@@ -90,10 +109,19 @@ h4 {
     margin-left: 4%;
     margin-right: 10%;
 }
-
-.icons {
-    color: gray;
+.card-icon {
+    color: var(--bz-aqua);
 }
+.card-title {
+    color: var(--bz-wine);
+}
+.card-body-text {
+    color: #666;
+}
+.card-links {
+    color: var(--bz-wine);
+}
+
 
 
 .bg-image-full {
@@ -134,6 +162,7 @@ footer {
 .login-wrapper {
     margin-top: 70px;
     padding: 15px;
+    min-height: calc(100vh - 198px);
 }
 
 .login-musician-section {
@@ -143,6 +172,7 @@ footer {
     padding: 1rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    min-height: calc(100vh - 198px);
 }
 
 .login-venue-section {
@@ -152,6 +182,7 @@ footer {
     padding: 1rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
+    min-height: calc(100vh - 198px);
 }
 
 
@@ -161,6 +192,7 @@ footer {
 
 .musician-index-wrapper {
     margin: 3rem 2rem;
+    min-height: calc(100vh - 198px);
 }
 
 .musician-call-to-action {
@@ -173,48 +205,94 @@ footer {
 }
 
     .musician-call-to-action h3 {
-        color: #17a2b8;
+        color: var(--bz-wine);
     }
 
     .musician-call-to-action button {
         margin: 2rem;
         padding: 1rem 3rem;
+        background-color: var(--bz-aqua);
     }
 
     .musician-call-to-action a {
         color: #fff;
     }
 
+    .musician-call-to-action button {
+        
+    }
+
 .musician-create-wrapper {
     margin: calc(50px + 3rem);
+    min-height: calc(100vh - 198px);
 }
-
-
-.musician-edit-wrapper {
-    margin: calc(50px + 3rem);
+.musician-create-wrapper input.btn {
+    background-color: var(--bz-aqua);
+    color: #fff;
 }
 
 
 .musician-details-wrapper {
     margin: calc(50px + 3rem);
-}
-.musician-details-wrapper dl {
-    margin: 3rem 0rem;
-}
-.musician-details-wrapper dt, .musician-details-wrapper dd {
-    margin-bottom: 1rem;
+    min-height: calc(100vh - 198px);
 }
 
+    .musician-details-wrapper dl {
+        margin: 3rem 0rem;
+    }
+
+    .musician-details-wrapper dt, .musician-details-wrapper dd {
+        margin-bottom: 1rem;
+    }
+
+
+.musician-edit-wrapper {
+    margin: calc(50px + 3rem);
+    min-height: calc(100vh - 198px);
+}
+.musician-edit-wrapper input.btn {
+    background-color: var(--bz-aqua);
+    color: #fff;
+}
 
 .musician-delete-wrapper {
     margin: calc(50px + 3rem);
+    min-height: calc(100vh - 198px);
 }
 .musician-delete-wrapper dl {
     margin: 3rem 0rem;
 }
-
 .musician-delete-wrapper dt, .musician-delete-wrapper dd {
     margin-bottom: 1rem;
+}
+.musician-delete-wrapper input.btn {
+    background-color: var(--bz-wine);
+    color: #fff;
+}
+
+
+.musician-login-wrapper {
+    min-height: calc(100vh - 198px);
+}
+.musician-login-wrapper input.btn {
+    background-color: var(--bz-aqua);
+    color: #fff;
+}
+
+/*Search Box on the Musician Page*/
+.search-box {
+    margin-left: 2rem;
+}
+
+/* On the musician page, this is the genre list search*/
+div.sidebyside {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.buttons-genre {
+    margin-bottom: 3rem;
+    margin-left: 2rem;
 }
 
 #musician-profile-image {
@@ -229,6 +307,7 @@ footer {
 
 .venue-index-wrapper {
     margin: 3rem 2rem;
+    min-height: calc(100vh - 198px);
 }
 
 .venue-call-to-action {
@@ -241,7 +320,7 @@ footer {
 }
 
     .venue-call-to-action h3 {
-        color: #17a2b8;
+        color: var(--bz-wine);
     }
 
     .venue-call-to-action button {
@@ -253,16 +332,31 @@ footer {
         color: #fff;
     }
 
+    button {
+        background-color: var(--bz-aqua);
+    }
+
 .venue-create-wrapper {
     margin: calc(50px + 3rem);
+    min-height: calc(100vh - 198px);
+}
+venue-create-wrapper input.btn {
+    background-color: var(--bz-aqua);
+    color: #fff;
 }
 
 .venue-edit-wrapper {
     margin: calc(50px + 3rem);
+    min-height: calc(100vh - 198px);
+}
+.venue-edit-wrapper input.btn {
+    background-color: var(--bz-aqua);
+    color: #fff;
 }
 
 .venue-details-wrapper {
     margin: calc(50px + 3rem);
+    min-height: calc(100vh - 198px);
 }
 
     .venue-details-wrapper dl {
@@ -275,6 +369,7 @@ footer {
 
 .venue-delete-wrapper {
     margin: calc(50px + 3rem);
+    min-height: calc(100vh - 198px);
 }
 
     .venue-delete-wrapper dl {
@@ -286,11 +381,18 @@ footer {
     }
 
 
-    /* Login Page */
 
+.schedule-index-wrapper {
+    margin: calc(3rem + 50px) 2rem 3rem 2rem;
+    min-height: calc(100vh - 198px);
+}
+
+
+/* Login Page */
 .login-index-wrapper {
     /* Using the normal 3rem 2rem margin + additional 50px to clear the navbar */
     margin: calc(3rem + 50px) 2rem 3rem 2rem;
+    min-height: calc(100vh - 198px);
 }
 
 .login-grouping {
@@ -298,4 +400,10 @@ footer {
 }
 .login-grouping button {
     margin: 0.5rem 0 1rem 0;
+}
+
+/* MusicianLogin Views */
+.musician-login-wrapper {
+    margin: calc(50px + 3rem);
+    min-height: calc(100vh - 198px);
 }

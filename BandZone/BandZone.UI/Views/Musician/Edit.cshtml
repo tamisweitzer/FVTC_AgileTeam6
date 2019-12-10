@@ -14,106 +14,92 @@
     {
         @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Edit Your Details</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Musician.MusicianId)
+        <div class="form-horizontal">
+            <h4>Edit Your Details</h4>
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.Musician.MusicianId)
 
-        <div class="form-group">
-            @*@Html.LabelFor(model => model.BandMusicianName, htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <label class="control-label col-md-2">Your Band Name</label>
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Musician.BandMusicianName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Musician.BandMusicianName, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.BandMusicianName, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <label class="control-label col-md-2">Your Band Name</label>
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Musician.BandMusicianName, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Musician.BandMusicianName, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Genres, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.ListBoxFor(model => model.GenreIds, new MultiSelectList(Model.Genres, "GenreId", "GenreType"), new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Genres, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Genres, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.ListBoxFor(model => model.GenreIds, new MultiSelectList(Model.Genres, "GenreId", "GenreType"), new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Genres, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Musician.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Musician.Phone, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Musician.Phone, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Musician.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Musician.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Musician.Phone, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Musician.ContactEmail, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Musician.ContactEmail, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Musician.ContactEmail, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Musician.ContactEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Musician.ContactEmail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Musician.ContactEmail, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Musician.Website, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Musician.Website, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Musician.Website, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Musician.Website, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Musician.Website, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Musician.Website, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @using (Html.BeginForm("Edit",
-                                    "Home",
-                                    FormMethod.Post,
-                                    new { enctype = "multipart/form-data" }))
-            {
+            <div class="form-group">
                 @Html.LabelFor(model => model.Musician.ProfileImage, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-offset-2 col-md-10">
-                <input type="file" name="file" id="file" /><br>
-                <br>
-                @ViewBag.Message
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Musician.ProfileImage, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Musician.ProfileImage, "", new { @class = "text-danger" })
+                </div>
             </div>
-            }
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Musician.LoginEmail, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Musician.LoginEmail, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Musician.LoginEmail, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Musician.LoginEmail, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Musician.LoginEmail, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Musician.LoginEmail, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Musician.Password, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Musician.Password, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Musician.Password, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Musician.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Musician.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Musician.Password, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Musician.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Musician.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Musician.Description, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @Html.LabelFor(model => model.Musician.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Musician.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Musician.Description, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-warning" />
-                <script type="text/javascript">
-        if ('@TempData["failed"]' == true) {
-            alert("file not uploaded.");
-        } else {
-            alert("file uploaded.")
-        }
-                </script>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn" />
+                </div>
             </div>
         </div>
-    </div>
     }
 
     <div>

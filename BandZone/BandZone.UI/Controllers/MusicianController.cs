@@ -5,75 +5,146 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BandZone.BL;
-using BandZone.PL;
 using BandZone.UI.Model;
 using BandZone.UI.ViewModels;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.IO;
-using System.Configuration;
 
 namespace BandZone.UI.Controllers
 {
     public class MusicianController : Controller
     {
+
         MusicianList musicians;
         //MusicGenreModel mgm = new MusicGenreModel();
 
+        
+
         // GET: Musician
-        public ActionResult Index(string searchString, string musicGenre, string sortOrder)
+        public ActionResult Index(string searchString, string musicGenre, string sortOrder, int? input_genre)
         {
+            MusicGenreModel mgm = new MusicGenreModel();
             musicians = new MusicianList();
-            musicians.Load();
-            //mgm.Genres.Load();
-
-            //mgm.Genres.AddRange(mgm.Genres.Distinct());
-            //ViewBag.musicGenre = new SelectList(mgm.Genres);
-
+            ViewBag.NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             IEnumerable<Musician> filteredMusicians;
-            filteredMusicians = musicians.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower()));
-
-            /*ViewBag.NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            System.Collections.Generic.List<Musician> sortedMusicians;
-
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    sortedMusicians = filteredMusicians.OrderByDescending(p => p.BandMusicianName).ToList();
-                    break;
-                default:
-                    sortedMusicians = filteredMusicians.OrderBy(p => p.BandMusicianName).ToList();
-                    break;
-            }*/
 
             if (searchString == null)
             {
-                return View(musicians);
+                musicians.LoadMusician();
+
+                switch (sortOrder)
+                {
+                    case "name_desc":
+                        filteredMusicians = musicians.OrderByDescending(m => m.BandMusicianName);
+                        break;
+                    default:
+                        filteredMusicians = musicians.OrderBy(m => m.BandMusicianName);
+                        break;
+                }
+
+                return View(filteredMusicians);
             }
             else
             {
-                return View(filteredMusicians);
-            }
+                if (input_genre.HasValue)
+                {
+                    MusicianList musician = new MusicianList();
+                    musician.Load(input_genre.Value);
+                    ViewBag.GenreId = input_genre.Value;
+                    filteredMusicians = musician.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower())).Distinct();
 
-            /*if (!String.IsNullOrEmpty(searchString))
-            {
-                filteredMusicians = musicians.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower()));
-            }
+                    switch (sortOrder)
+                    {
+                        case "name_desc":
+                            filteredMusicians = filteredMusicians.OrderByDescending(m => m.BandMusicianName);
+                            break;
+                        default:
+                            filteredMusicians = filteredMusicians.OrderBy(m => m.BandMusicianName);
+                            break;
+                    }
 
-            if (!String.IsNullOrEmpty(musicGenre))
-            {
-                filteredMusicians = musicians.Where(x => x.Genre == musicGenre);
-            }*/
+                    return View("Index", filteredMusicians);
+                }
+                else
+                {
+                    musicians.LoadMusician();
+                    filteredMusicians = musicians.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower()));
+
+                    switch (sortOrder)
+                    {
+                        case "name_desc":
+                            filteredMusicians = filteredMusicians.OrderByDescending(m => m.BandMusicianName);
+                            break;
+                        default:
+                            filteredMusicians = filteredMusicians.OrderBy(m => m.BandMusicianName);
+                            break;
+                    }
+
+                    return View(filteredMusicians);
+                }
+            }
         }
 
+        public ActionResult Load(int id)
+        {
+            MusicianList musician = new MusicianList();
+            musician.Load(id);
+            ViewBag.GenreId = id;
+            return View("Index", musician);
+        }
+
+
+        //Added 12/02 - Brings the Genre info (model)
         // GET: Musician/Details/5
         public ActionResult Details(int id)
         {
-            Musician musician = new Musician();
-            musician.MusicianId = id;
-            musician.LoadById();
-            return View(musician);
+            if (MusicianAuthenticate.IsAuthenticated())
+            {
+
+                MusicGenreModel mgm = new MusicGenreModel();
+
+                mgm.Musician = new Musician();
+                mgm.Musician.MusicianId = id;
+                mgm.Musician.LoadById();
+
+                // load all genres
+                mgm.Genres = new GenreList();
+                mgm.Genres.Load();
+
+                //deal wtith the existing genres 
+                IEnumerable<int> existingGenresIds = new List<int>();
+
+                //select only the Ids
+                existingGenresIds = mgm.Musician.Genres.Select(a => a.GenreId);
+                mgm.GenreIds = existingGenresIds;
+
+                Session["genreids"] = existingGenresIds;
+
+                return View(mgm);
+            }
+            else
+            {
+                return RedirectToAction("Create", "MusicianLogin", "Index");
+            }
+            
         }
+
+        // GET: Musician/Details/5
+        //public ActionResult Details(int id)
+        //{
+        //if (MusicianAuthenticate.IsAuthenticated())
+        //{
+        //Musician musician = new Musician();
+        //musician.MusicianId = id;
+        //musician.LoadById();
+        //return View(musician);
+        //}
+        //else
+        //{
+        //  return RedirectToAction("Create", "MusicianLogin");
+        //}
+        //}
+
 
         // GET: Musician/Create
         public ActionResult Create()
@@ -116,7 +187,7 @@ namespace BandZone.UI.Controllers
         {
             MusicGenreModel mgm = new MusicGenreModel();
 
-            if (Authenticate.IsAuthenticated())
+            if (MusicianAuthenticate.IsAuthenticated())
             {
                 mgm.Musician = new Musician();
                 mgm.Musician.MusicianId = id;
@@ -146,7 +217,7 @@ namespace BandZone.UI.Controllers
 
         // POST: Customer/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, MusicGenreModel mgmedit, System.Web.HttpPostedFileBase file)
+        public ActionResult Edit(int id, MusicGenreModel mgmedit)
         {
             try
             {
@@ -170,27 +241,6 @@ namespace BandZone.UI.Controllers
 
                 //Do the adds
                 adds.ToList().ForEach(a => MusicGenre.Add(id, a));
-
-                // Musician profile image 
-                if (file != null && file.ContentLength > 0)
-                    try
-                    {
-                        string path = Path.Combine(Server.MapPath("~/Images/"),
-                                                   Path.GetFileName(file.FileName));
-                        file.SaveAs(path);
-                        ViewBag.Message = "File uploaded successfully";
-                        TempData["success"] = true;
-                    }
-                    catch (Exception ex)
-                    {
-                        ViewBag.Message = "ERROR:" + ex.Message.ToString();
-                        TempData["failed"] = true;
-                    }
-                else
-                {
-                    ViewBag.Message = "You have not specified a file.";
-                    TempData["failed"] = true;
-                }
 
                 // TODO: Add update logic here
                 mgmedit.Musician.Update();

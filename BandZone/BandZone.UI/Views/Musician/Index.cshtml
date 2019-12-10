@@ -16,13 +16,20 @@
 
 <div class="musician-index-wrapper">
 
-    @using (Html.BeginForm())
+    @using (Html.BeginForm("Index", "Musician"))
     {
-        <p>
-            Name: @Html.TextBox("searchString") <input type="submit" value="Search" />
-            
+        @Html.Hidden("input_genre", (object)ViewBag.GenreId)
+        <p class="search-box">
+            @Html.TextBox("searchString", "", new {@class="form-control d-inline-block mr-3", placeholder="Search for a musician..."  }) 
+            <input type="submit" value="Search" class="btn" />
         </p>
     }
+
+    <!-- List of Genres -->
+    <div class="buttons-genre">
+        <div class="sidebyside btn btn-large btn-light">@Html.ActionLink("Show All", "Index", "Musician")</div>
+        <div class="sidebyside">@{ Html.RenderAction("Sidebar", "Genre"); }</div>
+    </div>
 
     <table class="table table-striped ">
         <tr>
@@ -30,18 +37,17 @@
                     @Html.DisplayNameFor(model => model.BandMusicianName)
                 </th>*@
 
-            <th>image </th>
-            <th>Musician Name</th>
+            <th><!-- image --></th>
+            <th> @Html.ActionLink("Musician Name", "Index", new { sortOrder = ViewBag.NameSort })</th>
             <th>Website</th>
 
         </tr>
 
         @foreach (var item in Model)
-        {
+                {
             <tr>
                 <td>
-                    <img id="musician-profile-image" src=@Html.DisplayFor(modelItem => item.ProfileImage)
-                   <!--@Html.DisplayFor(modelItem => item.ProfileImage)-->
+                    @*@Html.DisplayFor(modelItem => item.ProfileImage)*@ [image]
                 </td>
                 <td>
                     @Html.ActionLink(item.BandMusicianName, "Details", "Musician", new { Id = item.MusicianId }, null)
@@ -60,7 +66,7 @@
     <div class="musician-call-to-action">
         <h3>Sign up your Band</h3>
         <p class="text-secondary">If you are a band or a musician and would like to join BandZone, sign up now.</p>
-        <button class="btn btn-large btn-info">@Html.ActionLink("Create an account", "Create")</button>
+        <button class="btn btn-large">@Html.ActionLink("Create an account", "Create")</button>
     </div>
 </div>
 

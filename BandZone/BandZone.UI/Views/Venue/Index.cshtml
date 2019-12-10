@@ -17,8 +17,9 @@
 
     @using (Html.BeginForm())
     {
-        <p>
-            Name: @Html.TextBox("searchString") <input type="submit" value="Search" />
+        <p class="my-5">
+            @Html.TextBox("searchString", "", new { @class = "form-control d-inline-block mr-3", placeholder = "Search for a venue..." })
+            <input type="submit" value="Search" class="btn" />
         </p>
     }
 
@@ -50,6 +51,6 @@
     <div class="venue-call-to-action">
         <h3>Sign up your Bar or Restaurant</h3>
         <p class="text-secondary">If you are a bar or restaurant and would like to join BandZone, sign up now.</p>
-        <button class="btn btn-large btn-info">@Html.ActionLink("Create an account", "Create")</button>
+        <button class="btn btn-large">@Html.ActionLink("Create an account", "Create")</button>
     </div>
 </div>

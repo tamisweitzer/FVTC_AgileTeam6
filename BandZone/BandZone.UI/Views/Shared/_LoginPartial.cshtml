@@ -1,0 +1,25 @@
+﻿@using BandZone.UI.Model 
+@if (MusicianAuthenticate.IsAuthenticated())
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right mr-3">
+            <li>
+                @Html.ActionLink("Welcome Back!", "Index", "Musician", routeValues: null, htmlAttributes: new { title = "Manage Profile", @class="nav-text-override" })
+            </li>
+            <li>
+                @Html.ActionLink("Log off", "Logout", "MusicianLogin", routeValues: null, htmlAttributes: new { @class = "nav-text-override" });
+            </li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Create", "Musician", routeValues: null, htmlAttributes: new { id = "registerLink", @class= "nav-text-override" })</li>
+        
+        <li>@Html.ActionLink("Log in", "Create", "MusicianLogin", routeValues: null, htmlAttributes: new { id = "loginLink", @class= "nav-text-override" })</li>
+    </ul>
+}

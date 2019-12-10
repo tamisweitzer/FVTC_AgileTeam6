@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -23,26 +24,20 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            @Html.ActionLink("Band Zone", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <a href='@Url.Action("Index", "Home")'>
+                <img src='@Url.Content("~/images/logo.png")' />
+            </a>
+            
         </div>
 
         <div class="collapse navbar-collapse" id="navigation">
             <ul class="nav navbar-nav">
-                @*<li class="nav-item">@Html.ActionLink("Home", "Index", "Home")</li>*@
-                <li>@Html.ActionLink("Musicians", "Index", "Musician")</li>
-                <li>@Html.ActionLink("Venues", "Index", "Venue")</li>
-                <li>@Html.ActionLink("Schedules", "Index", "MusicianVenueEvent")</li>
+                <li>@Html.ActionLink("Musicians", "Index", "Musician", new { area = "" }, new { @class = "nav-text-override" })</li>
+                <li>@Html.ActionLink("Venues", "Index", "Venue", new { area = "" }, new { @class = "nav-text-override" })</li>
+                <li>@Html.ActionLink("Schedules", "Index", "MusicianVenueEvent", new { area = "" }, new { @class = "nav-text-override" })</li>
             </ul>
 
-            <ul class="nav navbar-nav navbar-right ml-2">
-            <li class="dropdown ml-auto">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Login</span></a>
-                <ul class="nav navbar-nav navbar-right ml-2 dropdown-menu">
-                    <li>@Html.ActionLink("Musician Login", "Create", "MusicianLogin")</li>
-                    <li>@Html.ActionLink("Venue Login", "Create", "VenueLogin")</li>
-                    <li>@Html.ActionLink("Log Out", "Logout", "MusicianLogin")</li>
-                </ul>
-                </li>
+            @Html.Partial("_LoginPartial")
         </div>
     </nav>
 
