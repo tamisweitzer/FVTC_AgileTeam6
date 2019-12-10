@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Genre.cs" />
+    <Compile Include="HttpPostedFileBase.cs" />
     <Compile Include="Musician.cs" />
     <Compile Include="MusicianGenre.cs" />
     <Compile Include="MusicianVenueEvent.cs" />

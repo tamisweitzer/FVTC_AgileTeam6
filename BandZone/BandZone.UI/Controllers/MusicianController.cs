@@ -5,10 +5,13 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using BandZone.BL;
+using BandZone.PL;
 using BandZone.UI.Model;
 using BandZone.UI.ViewModels;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.IO;
+using System.Configuration;
 
 namespace BandZone.UI.Controllers
 {
@@ -51,7 +54,7 @@ namespace BandZone.UI.Controllers
             {
                 return View(filteredMusicians);
             }
-            
+
             /*if (!String.IsNullOrEmpty(searchString))
             {
                 filteredMusicians = musicians.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower()));
@@ -143,7 +146,7 @@ namespace BandZone.UI.Controllers
 
         // POST: Customer/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, MusicGenreModel mgmedit)
+        public ActionResult Edit(int id, MusicGenreModel mgmedit, System.Web.HttpPostedFileBase file)
         {
             try
             {
@@ -167,6 +170,27 @@ namespace BandZone.UI.Controllers
 
                 //Do the adds
                 adds.ToList().ForEach(a => MusicGenre.Add(id, a));
+
+                // Musician profile image 
+                if (file != null && file.ContentLength > 0)
+                    try
+                    {
+                        string path = Path.Combine(Server.MapPath("~/Images/"),
+                                                   Path.GetFileName(file.FileName));
+                        file.SaveAs(path);
+                        ViewBag.Message = "File uploaded successfully";
+                        TempData["success"] = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        ViewBag.Message = "ERROR:" + ex.Message.ToString();
+                        TempData["failed"] = true;
+                    }
+                else
+                {
+                    ViewBag.Message = "You have not specified a file.";
+                    TempData["failed"] = true;
+                }
 
                 // TODO: Add update logic here
                 mgmedit.Musician.Update();

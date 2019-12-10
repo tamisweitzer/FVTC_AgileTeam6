@@ -30,7 +30,7 @@
                     @Html.DisplayNameFor(model => model.BandMusicianName)
                 </th>*@
 
-            <th><!-- image --></th>
+            <th>image </th>
             <th>Musician Name</th>
             <th>Website</th>
 
@@ -40,7 +40,8 @@
         {
             <tr>
                 <td>
-                    @*@Html.DisplayFor(modelItem => item.ProfileImage)*@ [image]
+                    <img id="musician-profile-image" src=@Html.DisplayFor(modelItem => item.ProfileImage)
+                   <!--@Html.DisplayFor(modelItem => item.ProfileImage)-->
                 </td>
                 <td>
                     @Html.ActionLink(item.BandMusicianName, "Details", "Musician", new { Id = item.MusicianId }, null)
