@@ -20,7 +20,8 @@
     {
         @Html.Hidden("input_genre", (object)ViewBag.GenreId)
         <p class="search-box">
-            Name: @Html.TextBox("searchString") <input type="submit" value="Search" />
+            @Html.TextBox("searchString", "", new {@class="form-control d-inline-block mr-3", placeholder="Search for a musician..."  }) 
+            <input type="submit" value="Search" class="btn" />
         </p>
     }
 
