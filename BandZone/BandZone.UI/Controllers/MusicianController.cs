@@ -24,6 +24,20 @@ namespace BandZone.UI.Controllers
             MusicGenreModel mgm = new MusicGenreModel();
             musicians = new MusicianList();
 
+            #region Sort (doesn't work)
+            /**ViewBag.NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            var mus = from m in db.tblMusician select m;
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    mus = mus.OrderByDescending(m => m.BandMusicianName);
+                    break;
+                default:
+                    mus = mus.OrderBy(m => m.BandMusicianName);
+                    break;
+            }**/
+            #endregion
+
             if (searchString == null)
             {
                 musicians.LoadMusician();
