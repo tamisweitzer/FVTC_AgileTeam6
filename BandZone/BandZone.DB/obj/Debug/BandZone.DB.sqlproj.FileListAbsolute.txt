@@ -39,3 +39,13 @@ C:\Users\hunte\Source\Repos\Agile\BandZone\BandZone.DB\obj\Debug\postdeploy.sql
 C:\Users\hunte\Source\Repos\Agile\BandZone\BandZone.DB\obj\Debug\predeploy.sql
 C:\Users\hunte\Source\Repos\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.dll
 C:\Users\hunte\Source\Repos\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb
+C:\repos\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.dacpac
+C:\repos\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.dll
+C:\repos\Agile\BandZone\BandZone.DB\bin\Debug\BandZone.DB.pdb
+C:\repos\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.sqlprojAssemblyReference.cache
+C:\repos\Agile\BandZone\BandZone.DB\obj\Debug\Model.xml
+C:\repos\Agile\BandZone\BandZone.DB\obj\Debug\refactor.xml
+C:\repos\Agile\BandZone\BandZone.DB\obj\Debug\postdeploy.sql
+C:\repos\Agile\BandZone\BandZone.DB\obj\Debug\predeploy.sql
+C:\repos\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.dll
+C:\repos\Agile\BandZone\BandZone.DB\obj\Debug\BandZone.DB.pdb
