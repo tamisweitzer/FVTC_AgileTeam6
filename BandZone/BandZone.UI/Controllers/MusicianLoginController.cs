@@ -33,16 +33,27 @@ namespace BandZone.UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create ( Musician musician, string returnurl )
+        public ActionResult Create ( Musician musician, string returnurl, int id )
         {
+             
+
             try
             {
                 if (musician.Login())
                 {
+
                     HttpContext.Session["musician"] = musician;
                     if (returnurl == null) {
                         ViewBag.Message = "login worked";
-                        return RedirectToAction("Index", "Musician");
+                        if ( musician.MusicianId == id )
+                        {
+                            return RedirectToAction("Edit", "Musician", new { id = musician.MusicianId });
+                        }
+                        else
+                        {
+                            return RedirectToAction(returnurl);
+                        }
+                        
                     }
                     else
                     {

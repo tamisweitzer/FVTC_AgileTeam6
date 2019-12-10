@@ -220,7 +220,7 @@ namespace BandZone.UI.Controllers
             else
             {
                 //return RedirectToAction("Create", "Login", new { returnurl = HttpContext.Request.Url});
-                return RedirectToAction("Create", "MusicianLogin", "Index");
+                return RedirectToAction("Create", "MusicianLogin", new { id = id} );
             }
         }
 
