@@ -245,6 +245,9 @@ footer {
         margin-bottom: 1rem;
     }
 
+.musicianschedule {
+    text-align: center;
+}
 
 .musician-edit-wrapper {
     margin: calc(50px + 3rem);

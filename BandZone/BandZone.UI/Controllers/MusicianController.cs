@@ -93,6 +93,15 @@ namespace BandZone.UI.Controllers
             return View("Index", musician);
         }
 
+        //Musician Calendar 
+        [HttpGet]
+        public JsonResult GetEvents(int id)
+        {
+            MusicianVenueEventList musicianVenueEvents = new MusicianVenueEventList();
+            musicianVenueEvents.Load(id);
+            var events = musicianVenueEvents.ToList();
+            return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
 
         //Added 12/02 - Brings the Genre info (model)
         // GET: Musician/Details/5

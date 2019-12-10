@@ -236,6 +236,59 @@ namespace BandZone.BL
                 throw ex;
             }
         }
+
+        //to use on the musician Details Calendar
+        public void Load(int MusicianId)
+        {
+            try
+            {
+                BandZoneEntities dc = new BandZoneEntities();
+
+                var results = (from mve in dc.tblMusicianVenueEvent
+                               join m in dc.tblMusician on mve.MusicianId equals m.MusicianId
+                               join v in dc.tblVenue on mve.VenueId equals v.VenueId
+                               where m.MusicianId == MusicianId
+
+                               select new
+                               {
+                                   mve.Id,
+                                   mve.MusicianId,
+                                   mve.VenueId,
+                                   mve.EventTime,
+                                   mve.EventHour,
+                                   m.BandMusicianName,
+                                   v.VenueName,
+                                   v.Address,
+                                   v.City
+                               }).ToList();
+
+                foreach (var p in results)
+                {
+                    // Make a ProgDec object 
+                    MusicianVenueEvent musicianVenueEvent = new MusicianVenueEvent();
+
+                    // Fill the progDec object properties
+                    // from values in the table
+                    musicianVenueEvent.Id = p.Id;
+                    musicianVenueEvent.MusicianId = p.MusicianId;
+                    musicianVenueEvent.VenueId = p.VenueId;
+                    musicianVenueEvent.EventTime = p.EventTime;
+                    musicianVenueEvent.EventHour = p.EventHour;
+                    musicianVenueEvent.BandMusicianName = p.BandMusicianName;
+                    musicianVenueEvent.VenueName = p.VenueName;
+                    musicianVenueEvent.Address = p.Address;
+                    musicianVenueEvent.City = p.City;
+
+                    // Add it to the ProgDecList (myself)
+                    Add(musicianVenueEvent);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 
 }
