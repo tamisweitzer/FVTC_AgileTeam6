@@ -23,41 +23,61 @@ namespace BandZone.UI.Controllers
         {
             MusicGenreModel mgm = new MusicGenreModel();
             musicians = new MusicianList();
-
-            #region Sort (doesn't work)
-            /**ViewBag.NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            var mus = from m in db.tblMusician select m;
-            switch (sortOrder)
-            {
-                case "name_desc":
-                    mus = mus.OrderByDescending(m => m.BandMusicianName);
-                    break;
-                default:
-                    mus = mus.OrderBy(m => m.BandMusicianName);
-                    break;
-            }**/
-            #endregion
+            ViewBag.NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            IEnumerable<Musician> filteredMusicians;
 
             if (searchString == null)
             {
                 musicians.LoadMusician();
-                return View(musicians);
+
+                switch (sortOrder)
+                {
+                    case "name_desc":
+                        filteredMusicians = musicians.OrderByDescending(m => m.BandMusicianName);
+                        break;
+                    default:
+                        filteredMusicians = musicians.OrderBy(m => m.BandMusicianName);
+                        break;
+                }
+
+                return View(filteredMusicians);
             }
             else
             {
-                IEnumerable<Musician> filteredMusicians;
                 if (input_genre.HasValue)
                 {
                     MusicianList musician = new MusicianList();
                     musician.Load(input_genre.Value);
                     ViewBag.GenreId = input_genre.Value;
                     filteredMusicians = musician.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower())).Distinct();
+
+                    switch (sortOrder)
+                    {
+                        case "name_desc":
+                            filteredMusicians = filteredMusicians.OrderByDescending(m => m.BandMusicianName);
+                            break;
+                        default:
+                            filteredMusicians = filteredMusicians.OrderBy(m => m.BandMusicianName);
+                            break;
+                    }
+
                     return View("Index", filteredMusicians);
                 }
                 else
                 {
                     musicians.LoadMusician();
                     filteredMusicians = musicians.Where(m => m.BandMusicianName.ToLower().Contains(searchString.ToLower()));
+
+                    switch (sortOrder)
+                    {
+                        case "name_desc":
+                            filteredMusicians = filteredMusicians.OrderByDescending(m => m.BandMusicianName);
+                            break;
+                        default:
+                            filteredMusicians = filteredMusicians.OrderBy(m => m.BandMusicianName);
+                            break;
+                    }
+
                     return View(filteredMusicians);
                 }
             }
