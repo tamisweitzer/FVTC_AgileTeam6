@@ -18,6 +18,8 @@ namespace BandZone.UI.Controllers
         MusicianList musicians;
         //MusicGenreModel mgm = new MusicGenreModel();
 
+        
+
         // GET: Musician
         public ActionResult Index(string searchString, string musicGenre, string sortOrder, int? input_genre)
         {
