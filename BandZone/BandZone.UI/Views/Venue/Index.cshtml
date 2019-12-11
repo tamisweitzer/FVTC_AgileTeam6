@@ -26,7 +26,7 @@
     <table class="table table-striped">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.VenueName)
+                @Html.ActionLink("Venue Name", "Index", new { sortOrder = ViewBag.NameSort })
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.City)
@@ -37,7 +37,6 @@
         {
             <tr>
                 <td>
-
                     @Html.ActionLink(item.VenueName, "Details", "Venue", new { Id = item.VenueId }, null)
                 </td>
                 <td>

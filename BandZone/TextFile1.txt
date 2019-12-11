@@ -16,3 +16,8 @@ afterhours@after.com
 123
 Musician/Details/6
 
+DON'T GO OVER:
+
+	Sort when searching by a word or genre
+	Uploading Image
+	Edit for any other user besides After Hours
