@@ -54,11 +54,11 @@
             <div class="card text-center">
                 <div class="card-body">
                     <i class="fas fa-music fa-5x mb-2 icons card-icon"></i>
-                    <h2 class="card-title ">@Html.ActionLink("Who", "Index", "Musician", new { @class = "card-links" })</h2>
+                    <h2 class="card-title ">@Html.ActionLink("Who", "Index", "Musician", new { area = "" }, new { @class = "card-links" })</h2>
                     <p class="card-body-text">
                         Bands and Musicians performing in the Fox Cities area
                     </p>
-                    <p>@Html.ActionLink("More...", "Index", "Musician", new { @class="card-links" })</p>
+                    <p>@Html.ActionLink("More...", "Index", "Musician", new { area = "" }, new { @class="card-links" })</p>
                 </div>
             </div>
         </div>
@@ -66,11 +66,11 @@
             <div class="card text-center">
                 <div class="card-body">
                     <i class="far fa-calendar-alt fa-5x mb-2 icons card-icon"></i>
-                    <h2 class="card-title">@Html.ActionLink("When", "Index", "MusicianVenueEvent", new { @class = "card-links" })</h2>
+                    <h2 class="card-title">@Html.ActionLink("When", "Index", "MusicianVenueEvent", new { area = "" }, new { @class = "card-links" })</h2>
                     <p class="card-body-text">
                         Local Performing Schedules for the next weeks
                     </p>
-                    <p>@Html.ActionLink("More...", "Index", "MusicianVenueEvent", new { @class="card-links" })</p>
+                    <p>@Html.ActionLink("More...", "Index", "MusicianVenueEvent", new { area = "" }, new { @class="card-links" })</p>
                 </div>
             </div>
         </div>
@@ -78,11 +78,11 @@
             <div class="card text-center">
                 <div class="card-body">
                     <i class="fas fa-glass-martini-alt fa-5x mb-2 icons card-icon"></i>
-                    <h2 class="card-title">@Html.ActionLink("Where", "Index", "Venue", new { @class = "card-links" })</h2>
+                    <h2 class="card-title">@Html.ActionLink("Where", "Index", "Venue", new { area = "" }, new { @class = "card-links" })</h2>
                     <p class="card-body-text">
                         List of Live Music Venues in the Fox Cities area
                     </p>
-                    <p>@Html.ActionLink("More...", "Index", "Venue", new { @class="card-links" })</p>
+                    <p>@Html.ActionLink("More...", "Index", "Venue", new { area = "" }, new { @class="card-links" })</p>
                 </div>
             </div>
         </div>
