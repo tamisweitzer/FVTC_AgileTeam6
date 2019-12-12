@@ -157,6 +157,11 @@ footer {
     text-align: center;
 }
 
+.profile-image-thumbnails {
+        width: 135px;
+        height: 100px;
+    }
+
 
 
 /* Login Page */
