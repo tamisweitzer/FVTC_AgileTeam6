@@ -5,97 +5,196 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <div class="venue-details-wrapper">
-        <h2>Summary of Your Profile Information</h2>
+<div class="venue-details-wrapper">
+    <h2>Summary of Your Profile Information</h2>
 
-        <div>
-            <hr />
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.VenueName)
-                </dt>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.VenueName)
+            </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.VenueName)
-                </dd>
+            <dd>
+                @Html.DisplayFor(model => model.VenueName)
+            </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.Address)
-                </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Address)
-                </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.City)
-                </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.City)
+            </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.City)
-                </dd>
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.OpenTime)
-                </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.OpenTime)
+            </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.OpenTime)
-                </dd>
+            <dd>
+                @Html.DisplayFor(model => model.OpenTime)
+            </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.CloseTime)
-                </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.CloseTime)
+            </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.CloseTime)
-                </dd>
+            <dd>
+                @Html.DisplayFor(model => model.CloseTime)
+            </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.ContactEmail)
-                </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ContactEmail)
+            </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.ContactEmail)
-                </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ContactEmail)
+            </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.Phone)
-                </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Phone)
-                </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.ProfileImage)
-                </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ProfileImage)
+            </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.ProfileImage)
-                </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ProfileImage)
+            </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.LoginEmail)
-                </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.LoginEmail)
+            </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.LoginEmail)
-                </dd>
+            <dd>
+                @Html.DisplayFor(model => model.LoginEmail)
+            </dd>
 
-                <dt>
-                    @Html.DisplayNameFor(model => model.Password)
-                </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Password)
+            </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.Password)
-                </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Password)
+            </dd>
 
-            </dl>
-        </div>
+        </dl>
+
         <p>
             @Html.ActionLink("Edit", "Edit", new { id = Model.VenueId }) |
             @Html.ActionLink("Back to List", "Index")
         </p>
 
+        <br />
+        <br />
+        <hr />
+        <div class="musicianschedule">
+            <h2>@Html.DisplayFor(model => model.VenueName) Schedule</h2>
+        </div>
+        <hr />
+
+        <div id="calender"></div>
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title"><span id="eventTitle"></span></h4>
+                    </div>
+                    <div class="modal-body">
+                        <p id="pDetails"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </div>
+
+
+
+
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.css" rel="stylesheet" />
+<link href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.print.css" rel="stylesheet" media="print" />
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.4.0/fullcalendar.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            var events = [];
+            $.ajax({
+                type: "GET",
+                url: "/Venue/GetEvents/@Model.VenueId",
+                success: function (data) {
+                    $.each(data, function (i, v) {
+                        events.push({
+                            title: v.BandMusicianName,
+                            band: v.BandMusicianName,
+                            venue: v.VenueName,
+                            address: v.Address,
+                            city: v.City,
+                            start: v.EventTime,
+                            eventHour: v.EventHour,
+                            color: '#cce6ff',
+                            allDay: true
+                        });
+                    })
+
+                    GenerateCalender(events);
+                },
+                error: function (error) {
+                    alert('failed');
+                }
+            })
+
+            function GenerateCalender(events) {
+                $('#calender').fullCalendar('destroy');
+                $('#calender').fullCalendar({
+                    contentHeight: 500,
+                    defaultDate: new Date(),
+                    //timeFormat: 'h(:mm)a',
+                    header: {
+                        left: 'prev,next today',
+                        center: 'title',
+                        right: 'month,basicWeek,basicDay,agenda'
+                    },
+                    eventLimit: true,
+                    eventColor: '#378006',
+                    events: events,
+                    eventClick: function (calEvent, jsEvent, view) {
+                        $('#myModal #eventTitle').text(calEvent.title);
+                        var $description = $('<div/>');
+                        $description.append($('<p/>').html('<b>Day: </b>' + calEvent.start.format("MM-DD-YYYY")));
+                        $description.append($('<p/>').html('<b>Time: </b>' + calEvent.eventHour));
+                        $description.append($('<p/>').html('<b>Band Name: </b>' + calEvent.band));
+                        $description.append($('<p/>').html('<b>Venue Name: </b>' + calEvent.venue));
+                        $description.append($('<p/>').html('<b>Address: </b>' + calEvent.address));
+                        $description.append($('<p/>').html('<b>City: </b>' + calEvent.city));
+                        $('#myModal #pDetails').empty().html($description);
+
+                        $('#myModal').modal();
+                    }
+                })
+            }
+        })
+    </script>
+}

@@ -30,6 +30,17 @@ namespace BandZone.UI.Controllers
             }
         }
 
+
+        //Venue Calendar 
+        [HttpGet]
+        public JsonResult GetEvents(int id)
+        {
+            MusicianVenueEventList musicianVenueEvents = new MusicianVenueEventList();
+            musicianVenueEvents.LoadVenue(id);
+            var events = musicianVenueEvents.ToList();
+            return new JsonResult { Data = events, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
         // GET: Venue/Details/5
         public ActionResult Details(int id)
         {
