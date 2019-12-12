@@ -152,6 +152,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Model\MusicianAuthenticate.cs" />
+    <Compile Include="Model\VenueAuthenticate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\MusicGenreModel.cs" />
     <Compile Include="ViewModels\MusicianVenueEventModel.cs" />

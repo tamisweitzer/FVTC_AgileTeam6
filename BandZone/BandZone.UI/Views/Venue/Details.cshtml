@@ -75,7 +75,8 @@
                 @Html.DisplayFor(model => model.ProfileImage)
             </dd>
 
-            <dt>
+            @* Hide login details from public visitors *@
+            @*<dt>
                 @Html.DisplayNameFor(model => model.LoginEmail)
             </dt>
 
@@ -89,7 +90,7 @@
 
             <dd>
                 @Html.DisplayFor(model => model.Password)
-            </dd>
+            </dd>*@
 
         </dl>
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BandZone.BL;
+using BandZone.UI.Model;
 
 namespace BandZone.UI.Controllers
 {
@@ -102,26 +103,36 @@ namespace BandZone.UI.Controllers
         // GET: Venue/Edit/5
         public ActionResult Edit(int id)
         {
-            Venue venue = new Venue();
-            venue.VenueId = id;
-            venue.LoadById();
-            return View(venue);
+            if (VenueAuthenticate.IsAuthenticated())
+            {
+                Venue venue = new Venue();
+                venue.VenueId = id;
+                venue.LoadById();
+                return View(venue);
+            }
+            else
+            {
+                return RedirectToAction("Create", "MusicianLogin", new { id = id });
+            }
         }
 
         // POST: Venue/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, Venue venue)
         {
-            try
-            {
-                // TODO: Add update logic here
-                venue.Update();
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View(venue);
-            }
+            
+                try
+                {
+                    // TODO: Add update logic here
+                    venue.Update();
+                    return RedirectToAction("Index");
+                }
+                catch
+                {
+                    return View(venue);
+                }
+            
+            
         }
 
         // GET: Venue/Delete/5
