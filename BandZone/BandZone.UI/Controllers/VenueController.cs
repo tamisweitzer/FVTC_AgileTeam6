@@ -12,20 +12,46 @@ namespace BandZone.UI.Controllers
         VenueList venues;
 
         // GET: Venue
-        public ActionResult Index(string searchString)
+        public ActionResult Index(string searchString, string sortOrder)
         {
             venues = new VenueList();
-            venues.Load();
-
+            ViewBag.NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             IEnumerable<Venue> filteredVenues;
-            filteredVenues = venues.Where(m => m.VenueName.ToLower().Contains(searchString.ToLower()));
 
             if (searchString == null)
             {
-                return View(venues);
+                venues.Load();
+
+                switch (sortOrder)
+                {
+                    case "name_desc":
+                        filteredVenues = venues.OrderByDescending(m => m.VenueName);
+                        break;
+                    default:
+                        filteredVenues = venues.OrderBy(m => m.VenueName);
+                        break;
+                }
+
+                return View(filteredVenues);
             }
             else
             {
+                venues.Load();
+
+                switch (sortOrder)
+                {
+                    case "name_desc":
+                        filteredVenues = venues.OrderByDescending(m => m.VenueName);
+                        break;
+                    default:
+                        filteredVenues = venues.OrderBy(m => m.VenueName);
+                        break;
+                }
+
+                filteredVenues = venues.Where(m => m.VenueName.ToLower().Contains(searchString.ToLower()));
+
+                
+
                 return View(filteredVenues);
             }
         }
