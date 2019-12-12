@@ -176,6 +176,9 @@
     <Content Include="images\logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\musician_14.jpg" />
+    <Content Include="images\musician_2.jpg" />
+    <Content Include="images\musician_6.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\BandZone - Web Deploy.pubxml" />
