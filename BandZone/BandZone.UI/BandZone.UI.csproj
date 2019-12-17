@@ -176,9 +176,23 @@
     <Content Include="images\logo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\musician_1.jpg" />
+    <Content Include="images\musician_10.jpg" />
+    <Content Include="images\musician_11.jpg" />
+    <Content Include="images\musician_12.jpg" />
+    <Content Include="images\musician_13.jpg" />
     <Content Include="images\musician_14.jpg" />
+    <Content Include="images\musician_16.jpg" />
+    <Content Include="images\musician_17.jpg" />
+    <Content Include="images\musician_18.jpg" />
     <Content Include="images\musician_2.jpg" />
+    <Content Include="images\musician_3.jpg" />
+    <Content Include="images\musician_4.jpg" />
+    <Content Include="images\musician_5.jpg" />
     <Content Include="images\musician_6.jpg" />
+    <Content Include="images\musician_7.jpg" />
+    <Content Include="images\musician_8.jpg" />
+    <Content Include="images\musician_9.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\BandZone - Web Deploy.pubxml" />

@@ -47,7 +47,7 @@
         {
             <tr>
                 <td>
-                   <img src="@("../images/musician_" + item.MusicianId + ".jpg")" style="width: 135px; height: 100px;"  />
+                   <img src="@("/../../images/musician_" + item.MusicianId + ".jpg")" style="width: 135px; height: 100px;"  />
                 </td>
                 <td>
                     @Html.ActionLink(item.BandMusicianName, "Details", "Musician", new { Id = item.MusicianId }, null)
